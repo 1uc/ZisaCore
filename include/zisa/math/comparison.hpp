@@ -69,6 +69,11 @@ ANY_DEVICE_INLINE constexpr T min(const T &x, const T &y, const T &z) {
   return zisa::min(x, zisa::min(y, z));
 }
 
+template <typename T>
+ANY_DEVICE_INLINE constexpr T min(const T &x, const T &y, const T &z, const T& a) {
+  return zisa::min(zisa::min(x, y), zisa::min(z, a));
+}
+
 // popular slope-limiter comparison
 ANY_DEVICE_INLINE double minmod(double a, double b) {
   return 0.5 * (sign(a) + sign(b)) * zisa::min(zisa::abs(a), zisa::abs(b));

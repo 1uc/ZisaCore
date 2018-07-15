@@ -180,6 +180,9 @@ ANY_DEVICE_INLINE T sech(T a) {
   return 1 / cosh(a);
 }
 
+ANY_DEVICE double factorial(int k);
+ANY_DEVICE_INLINE double Gamma(int k) { return factorial(k - 1); }
+
 } // namespace zisa
 
 #endif /* end of include guard */

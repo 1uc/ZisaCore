@@ -8,10 +8,10 @@
 
 #include <assert.h>
 #include <ctime>
+#include <exception>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <exception>
 
 #ifdef ZISA_SILENT
 #define ZISA_LOG_LEVEL -100
