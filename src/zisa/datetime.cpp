@@ -69,7 +69,7 @@ public:
   }
 
   static double parse_hhmmss(const std::string &duration) {
-    int first_colon = int(duration.find(":"));
+    auto first_colon = duration.find(":");
 
     int hours = stoi(duration.substr(0, first_colon));
     int minutes = stoi(duration.substr(first_colon + 1, 2));
@@ -79,7 +79,7 @@ public:
   }
 
   static double parse_dhhmmss(const std::string &duration) {
-    int pos_dash = int(duration.find("-"));
+    auto pos_dash = duration.find("-");
 
     if (pos_dash != int(duration.npos)) {
       int days = stoi(duration.substr(0, pos_dash));

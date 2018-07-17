@@ -11,11 +11,15 @@
 #include <memory>
 #include <string>
 #include <cstdio>
+#include <cassert>
 
 template <typename... Args>
 std::string string_format(const char *format, Args... args) {
   // Extra space for '\0'
-  size_t size = snprintf(nullptr, 0, format, args...) + 1;
+  auto size_ = snprintf(nullptr, 0, format, args...) + 1;
+  assert(size_ > 0);
+
+  size_t size = size_t(size_);
 
   std::unique_ptr<char[]> buf(new char[size]);
   snprintf(buf.get(), size, format, args...);
