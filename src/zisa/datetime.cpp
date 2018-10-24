@@ -81,7 +81,7 @@ public:
   static double parse_dhhmmss(const std::string &duration) {
     auto pos_dash = duration.find("-");
 
-    if (pos_dash != int(duration.npos)) {
+    if (pos_dash != duration.npos) {
       int days = stoi(duration.substr(0, pos_dash));
       return days * 24 * 3600 + parse_hhmmss(duration.substr(pos_dash + 1));
     } else {
