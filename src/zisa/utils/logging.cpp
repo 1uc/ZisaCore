@@ -5,14 +5,16 @@
  */
 
 #include <cstdlib>
-#include <cstring>
 #include <ctime>
 #include <sstream>
+#include <string>
 
 #include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
-void log_msg(char const *const file, const int line, char const *const severity,
+void log_msg(char const *const file,
+             const int line,
+             char const *const severity,
              const std::string &msg) {
   auto &os = std::cerr;
   std::stringstream ss;
