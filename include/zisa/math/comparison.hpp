@@ -70,7 +70,8 @@ ANY_DEVICE_INLINE constexpr T min(const T &x, const T &y, const T &z) {
 }
 
 template <typename T>
-ANY_DEVICE_INLINE constexpr T min(const T &x, const T &y, const T &z, const T& a) {
+ANY_DEVICE_INLINE constexpr T
+min(const T &x, const T &y, const T &z, const T &a) {
   return zisa::min(zisa::min(x, y), zisa::min(z, a));
 }
 

@@ -1,5 +1,4 @@
 /* Global configuration. */
-
 #ifndef CONFIG_H_FYDJO
 #define CONFIG_H_FYDJO
 

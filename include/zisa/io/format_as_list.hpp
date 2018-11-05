@@ -5,8 +5,8 @@
 #ifndef FORMAT_AS_LIST_H_H0M8C
 #define FORMAT_AS_LIST_H_H0M8C
 
-#include <string>
 #include <sstream>
+#include <string>
 #include <zisa/config.hpp>
 
 namespace zisa {
@@ -17,7 +17,7 @@ std::string format_as_list(const Array &array, int_t n) {
 
   ss << "[ ";
   for (int_t i = 0; i < n; ++i) {
-    ss << array[i] << (i < n - 1 ? ", " : "]");
+    ss << array[i] << (i < n - 1 ? ", " : " ]");
   }
 
   return ss.str();
