@@ -96,5 +96,13 @@ ANY_DEVICE_INLINE bool almost_equal(double a, double b, double atol) {
   return std::abs(b - a) < atol;
 }
 
+ANY_DEVICE_INLINE bool is_inside_interval(double x,
+                                          const std::tuple<double, double> &I) {
+
+  auto &[i0, i1] = I;
+
+  return i0 <= x && x <= i1;
+}
+
 } // namespace zisa
 #endif /* end of include guard: COMPARISON_H_3PO4FDB7 */
