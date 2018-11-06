@@ -23,6 +23,11 @@ std::string format_as_list(const Array &array, int_t n) {
   return ss.str();
 }
 
+template <class Array, class SFINAE = decltype(std::declval<Array>().size())>
+std::string format_as_list(const Array &array) {
+  return format_as_list(array, array.size());
+}
+
 } // namespace zisa
 
 #endif /* end of include guard */
