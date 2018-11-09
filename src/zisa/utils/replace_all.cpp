@@ -25,7 +25,4 @@ std::string replace_all(const std::string &source,
   return new_string;
 }
 
-
-
-
-}  // zisa
+} // namespace zisa
