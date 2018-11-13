@@ -6,8 +6,8 @@
 #include <iostream>
 
 namespace zisa {
-
 using int_t = std::size_t;
+} // namespace zisa
 
 #ifndef USE_CUDA
 
@@ -31,9 +31,7 @@ using int_t = std::size_t;
 #define ANY_DEVICE __host__ __device__
 #define ANY_DEVICE_INLINE __host__ __device__ __inline__
 
-} // namespace zisa
-
-#include <zisa/utils/string_format.hpp>
 #include <zisa/utils/logging.hpp>
+#include <zisa/utils/string_format.hpp>
 
 #endif /* end of include guard */
