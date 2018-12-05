@@ -34,4 +34,6 @@ using int_t = std::size_t;
 #include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
+#define ZISA_UNUSED(expr) (void)(expr);
+
 #endif /* end of include guard */
