@@ -16,10 +16,10 @@
 // The Stackoverflow version does not demangle for MSC. You can
 // detect MSC by the macro _MSC_VER.
 #ifdef _MSC_VER
-#define TYR_DONT_DEMANGLE
+#define ZISA_DONT_DEMANGLE
 #endif
 
-#ifndef TYR_DONT_DEMANGLE
+#ifndef ZISA_DONT_DEMANGLE
 #include <cxxabi.h>
 #endif
 
@@ -32,7 +32,7 @@ std::string type_name(bool with_decoration = true) {
   using TR = typename std::remove_reference<T>::type;
 
   std::unique_ptr<char, void (*)(void *)> demangled(
-#ifndef TYR_DONT_DEMANGLE
+#ifndef ZISA_DONT_DEMANGLE
       abi::__cxa_demangle(typeid(TR).name(), nullptr, nullptr, nullptr),
 #else
       nullptr,
