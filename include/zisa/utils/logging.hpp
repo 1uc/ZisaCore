@@ -80,6 +80,9 @@ void log_msg(char const *const file,
 
 #define XISX(X) #X << " = " << X
 #define PRINT(X) std::cout << XISX(X) << "\n"
-#define PRINT_IF(cond, x) if((cond)) { PRINT((x)); }
+#define PRINT_IF(cond, x)                                                      \
+  if ((cond)) {                                                                \
+    PRINT((x));                                                                \
+  }
 
 #endif /* end of include guard: LOGGING_HPP_B0KMI7N1 */

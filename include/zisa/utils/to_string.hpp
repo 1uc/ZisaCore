@@ -6,8 +6,8 @@
 #ifndef TO_STRING_H_1341G
 #define TO_STRING_H_1341G
 
-#include <string>
 #include <sstream>
+#include <string>
 
 namespace zisa {
 

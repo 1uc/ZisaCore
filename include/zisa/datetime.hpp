@@ -11,9 +11,9 @@
 
 namespace zisa {
 #if ZISA_HAS_MPI != 0
-  using time_stamp_t = double;
+using time_stamp_t = double;
 #else
-  using time_stamp_t = std::time_t;
+using time_stamp_t = std::time_t;
 #endif
 
 /// Format the date as 'YYYY-MM-DD HH:MM:SS UTC%z'.

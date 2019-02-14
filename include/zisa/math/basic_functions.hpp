@@ -44,13 +44,13 @@ ANY_DEVICE_INLINE double pow(double x, double y) {
 #endif
 }
 
-  ANY_DEVICE_INLINE float pow(float x, float y) {
+ANY_DEVICE_INLINE float pow(float x, float y) {
 #ifdef __CUDACC__
-    LOG_ERR("CHECK exact name.");
+  LOG_ERR("CHECK exact name.");
 #else
-    return std::pow(x, y);
+  return std::pow(x, y);
 #endif
-  }
+}
 
 template <int n, class T>
 ANY_DEVICE_INLINE constexpr T pow(T x) {

@@ -8,10 +8,10 @@
 #ifndef STRING_FORMAT_H_NESVBYMK
 #define STRING_FORMAT_H_NESVBYMK
 
+#include <cassert>
+#include <cstdio>
 #include <memory>
 #include <string>
-#include <cstdio>
-#include <cassert>
 
 template <typename... Args>
 std::string string_format(const char *format, Args... args) {
