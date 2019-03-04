@@ -38,12 +38,12 @@ std::string duration_format(double elapsed_seconds) {
   return string_format("%d-%02d:%02d:%02d", days, hours, minutes, seconds);
 }
 
-double elapsed_seconds(const zisa::time_stamp_t &current,
-                       const zisa::time_stamp_t &previous) {
+double elapsed_seconds(const zisa::time_stamp_t &newer,
+                       const zisa::time_stamp_t &older) {
 #if TYR_HAS_MPI != 0
-  return current - previous;
+  return newer - older;
 #else
-  return std::difftime(current, previous);
+  return std::difftime(newer, older);
 #endif
 }
 
@@ -69,7 +69,7 @@ public:
   }
 
   static double parse_hhmmss(const std::string &duration) {
-    auto first_colon = duration.find(":");
+    auto first_colon = duration.find(':');
 
     int hours = stoi(duration.substr(0, first_colon));
     int minutes = stoi(duration.substr(first_colon + 1, 2));
@@ -79,7 +79,7 @@ public:
   }
 
   static double parse_dhhmmss(const std::string &duration) {
-    auto pos_dash = duration.find("-");
+    auto pos_dash = duration.find('-');
 
     if (pos_dash != duration.npos) {
       int days = stoi(duration.substr(0, pos_dash));
