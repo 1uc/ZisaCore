@@ -129,39 +129,6 @@ ANY_DEVICE_INLINE int div_up(const int i, const int n) {
   return (i + n - 1) / n;
 }
 
-class Range {
-public:
-  ANY_DEVICE_INLINE Range(const std::initializer_list<int> &init_list) {
-    assert(init_list.size() == 2);
-    auto it = init_list.begin();
-    low = *(it++);
-    high = *it;
-  }
-
-  ANY_DEVICE_INLINE Range(int low, int high) : low(low), high(high) {}
-
-public:
-  int low;
-  int high;
-};
-
-/// Split interval in almost equal sized chunks.
-ANY_DEVICE_INLINE Range balanced_chunks(const Range &range,
-                                        int n_chunks,
-                                        int k_chunk) {
-  int length = range.high - range.low;
-  int chunk_size = length / n_chunks;
-  int n_large_chunks = length % n_chunks;
-
-  int low
-      = range.low + k_chunk * chunk_size + zisa::min(k_chunk, n_large_chunks);
-
-  int high = range.low + (k_chunk + 1) * chunk_size
-             + zisa::min(k_chunk + 1, n_large_chunks);
-
-  return Range(zisa::min(low, range.high), zisa::min(high, range.high));
-}
-
 /// compute a gaussian
 ANY_DEVICE_INLINE double gaussian(double x, double x_mid, double sigma) {
   return zisa::exp(-zisa::pow((x - x_mid) / sigma, 2.0));
