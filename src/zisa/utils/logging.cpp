@@ -9,6 +9,7 @@
 #include <sstream>
 #include <string>
 
+#include <zisa/io/backtrace.hpp>
 #include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
