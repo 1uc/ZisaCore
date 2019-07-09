@@ -10,7 +10,6 @@
 #include <zisa/config.hpp>
 
 namespace zisa {
-// TODO fix naming, should be is_nan.
 ANY_DEVICE_INLINE bool isnan(double x) {
 #ifdef __CUDACC__
   return ::isnan(x);
