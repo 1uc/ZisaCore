@@ -9,7 +9,10 @@
 #include <sstream>
 #include <string>
 
-#include <zisa/io/backtrace.hpp>
+#if ZISA_HAS_MPI != 0
+#include <zisa/parallelization/mpi.hpp>
+#endif
+
 #include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
@@ -22,12 +25,9 @@ void log_msg(char const *const file,
 
   ss << file << ":" << line << " [" << severity << "]: ";
 
-  // #if TYR_HAS_MPI != 0
-  //   int mpi_rank = -1;
-  //   MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
-
-  //   ss << string_format("[PE %3d] ", mpi_rank);
-  // #endif
+   #if ZISA_HAS_MPI != 0
+     ss << string_format("[PE %3d] ", zisa::mpi::size(MPI_COMM_WORLD));
+   #endif
 
   ss << msg << "\n";
 
