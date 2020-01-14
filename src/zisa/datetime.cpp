@@ -40,7 +40,7 @@ std::string duration_format(double elapsed_seconds) {
 
 double elapsed_seconds(const zisa::time_stamp_t &newer,
                        const zisa::time_stamp_t &older) {
-#if TYR_HAS_MPI != 0
+#if ZISA_HAS_MPI != 0
   return newer - older;
 #else
   return std::difftime(newer, older);

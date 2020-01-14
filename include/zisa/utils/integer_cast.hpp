@@ -27,6 +27,15 @@ public:
   }
 };
 
+template <>
+class IntegerCast<unsigned long, long> {
+public:
+  static unsigned long cast(long i) {
+    assert(i >= 0);
+    return size_t(i);
+  }
+};
+
 template <class Int>
 class IntegerCast<Int, Int> {
 public:
