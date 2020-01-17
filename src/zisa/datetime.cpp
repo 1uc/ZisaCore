@@ -1,6 +1,10 @@
 /* Collection of routines to manipulate dates and times.
  */
 
+#if ZISA_HAS_MPI == 1
+#include <zisa/parallelization/mpi.hpp>
+#endif
+
 #include <zisa/datetime.hpp>
 #include <zisa/utils/string_format.hpp>
 
@@ -53,7 +57,7 @@ double elapsed_seconds_since(const zisa::time_stamp_t &reference) {
 
 /// Get a time-stamp of the current time.
 zisa::time_stamp_t current_time_stamp() {
-#if TYR_HAS_MPI != 0
+#if ZISA_HAS_MPI == 1
   return MPI_Wtime();
 #else
   return time(0);

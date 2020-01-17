@@ -10,7 +10,7 @@
 #include <zisa/config.hpp>
 
 namespace zisa {
-#if ZISA_HAS_MPI != 0
+#if ZISA_HAS_MPI == 1
 using time_stamp_t = double;
 #else
 using time_stamp_t = std::time_t;
@@ -37,5 +37,5 @@ double elapsed_seconds_since(const zisa::time_stamp_t &reference);
 /// Convert the string "d-HH:MM:SS" to seconds.
 double string_to_seconds(const std::string &duration);
 
-} // namespace tyr
+}
 #endif /* end of include guard: DATETIME_H_TZXNLSQO */
