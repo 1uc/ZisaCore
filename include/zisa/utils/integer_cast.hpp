@@ -12,7 +12,7 @@ template <>
 class IntegerCast<int, size_t> {
 public:
   static int cast(size_t i) {
-    assert(i < size_t(std::numeric_limits<int>::max()));
+    assert(i <= size_t(std::numeric_limits<int>::max()));
 
     return int(i);
   }
@@ -32,7 +32,16 @@ class IntegerCast<unsigned long, long> {
 public:
   static unsigned long cast(long i) {
     assert(i >= 0);
-    return size_t(i);
+    return (unsigned long)(i);
+  }
+};
+
+template <>
+class IntegerCast<long, unsigned long> {
+public:
+  static long cast(unsigned long i) {
+    assert(i <= (unsigned long)(std::numeric_limits<long>::max()));
+    return long(i);
   }
 };
 
