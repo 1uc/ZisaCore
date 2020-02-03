@@ -3,6 +3,7 @@
  * Authors: Luc Grosheintz <forbugrep@zoho.com>
  *    Date: 2014-09-09
  */
+#include <zisa/utils/logging.hpp>
 
 #include <cstdlib>
 #include <ctime>
@@ -13,7 +14,6 @@
 #include <zisa/parallelization/mpi.hpp>
 #endif
 
-#include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
 void log_msg(char const *const file,
