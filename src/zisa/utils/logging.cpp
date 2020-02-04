@@ -26,7 +26,7 @@ void log_msg(char const *const file,
   ss << file << ":" << line << " [" << severity << "]: ";
 
    #if ZISA_HAS_MPI != 0
-     ss << string_format("[PE %3d] ", zisa::mpi::size(MPI_COMM_WORLD));
+     ss << string_format("[PE %3d] ", zisa::mpi::rank(MPI_COMM_WORLD));
    #endif
 
   ss << msg << "\n";
