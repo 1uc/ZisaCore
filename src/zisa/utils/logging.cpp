@@ -15,6 +15,7 @@
 #endif
 
 #include <zisa/utils/string_format.hpp>
+#include <zisa/datetime.hpp>
 
 void log_msg(char const *const file,
              const int line,
@@ -29,7 +30,9 @@ void log_msg(char const *const file,
      ss << string_format("[PE %3d] ", zisa::mpi::rank(MPI_COMM_WORLD));
    #endif
 
-  ss << msg << "\n";
+   auto current_time = zisa::time_format(zisa::current_time());
+
+  ss << current_time << "  " << msg << "\n";
 
   os << ss.str();
   os.flush();
