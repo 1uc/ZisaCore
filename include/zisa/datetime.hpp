@@ -7,7 +7,7 @@
 #define DATETIME_H_TZXNLSQO
 
 #include <ctime>
-#include <zisa/config.hpp>
+#include <string>
 
 namespace zisa {
 #if ZISA_HAS_MPI == 1
@@ -19,6 +19,9 @@ using time_stamp_t = std::time_t;
 /// Format the date as 'YYYY-MM-DD HH:MM:SS UTC%z'.
 std::string date_format(const std::time_t &time);
 
+/// Format the date as 'HH:MM:SS'.
+std::string time_format(const std::time_t &time);
+
 /// Format the duration as 'd-HH:MM:SS'.
 /** Fractional seconds are truncated. */
 std::string duration_format(double seconds);
@@ -28,6 +31,9 @@ zisa::time_stamp_t current_time_stamp();
 
 /// Get the current date.
 std::time_t current_date();
+
+/// Get the current time.
+std::time_t current_time();
 
 double elapsed_seconds(const zisa::time_stamp_t &newer,
                        const zisa::time_stamp_t &older);

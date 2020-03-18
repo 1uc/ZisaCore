@@ -31,6 +31,16 @@ std::string date_format(const std::time_t &time) {
   return std::string(date_str);
 }
 
+std::string time_format(const std::time_t &time) {
+  auto timeinfo = localtime_safe(time);
+
+  const int date_len = 50;
+  char date_str[date_len];
+  std::strftime(date_str, date_len, "%T", &timeinfo);
+
+  return std::string(date_str);
+}
+
 std::string duration_format(double elapsed_seconds) {
   int elapsed = int(elapsed_seconds); // chop off fractions of a second
 
@@ -65,6 +75,7 @@ zisa::time_stamp_t current_time_stamp() {
 }
 
 std::time_t current_date() { return time(0); }
+std::time_t current_time() { return time(0); }
 
 class DurationParser {
 public:
