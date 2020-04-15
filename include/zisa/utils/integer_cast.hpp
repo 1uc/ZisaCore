@@ -28,6 +28,29 @@ public:
 };
 
 template <>
+class IntegerCast<unsigned long long int, long unsigned int> {
+private:
+  using To = unsigned long long int;
+  using From = long unsigned int;
+
+public:
+  static To cast(From i) { return To(i); }
+};
+
+template <>
+class IntegerCast<long unsigned int, unsigned long long int> {
+private:
+  using To = long unsigned int;
+  using From = unsigned long long int;
+
+public:
+  static To cast(From i) {
+    assert(i <= From(std::numeric_limits<To>::max()));
+    return To(i);
+  }
+};
+
+template <>
 class IntegerCast<unsigned long, long> {
 public:
   static unsigned long cast(long i) {
