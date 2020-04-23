@@ -11,7 +11,7 @@
 #include <string>
 
 #if ZISA_HAS_MPI != 0
-#include <zisa/parallelization/mpi.hpp>
+#include <zisa/mpi/mpi.hpp>
 #endif
 
 #include <zisa/utils/string_format.hpp>
