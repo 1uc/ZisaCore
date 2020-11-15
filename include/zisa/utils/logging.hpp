@@ -21,8 +21,6 @@
 #define ZISA_LOG_LEVEL 0
 #endif
 
-void log_init(std::string log_file);
-
 /// Simple logging.
 /** Log a message to file.
  *
