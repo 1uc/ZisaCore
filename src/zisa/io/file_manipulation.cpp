@@ -1,0 +1,66 @@
+/* Safely write a string to file.
+ *
+ * Authors: Luc Grosheintz <forbugrep@zoho.com>
+ *    Date: 2016-02-09
+ */
+
+#include <experimental/filesystem>
+
+#include <zisa/io/file_manipulation.hpp>
+#include <zisa/utils/logging.hpp>
+#include <zisa/utils/string_format.hpp>
+
+namespace fs = std::experimental::filesystem;
+
+namespace zisa {
+void write_string_to_file(const std::string &message,
+                          const std::string &filename) {
+  std::ofstream fout(filename.c_str());
+
+  if (fout.is_open()) {
+    fout << message;
+  } else {
+    LOG_ERR("Can't write relaunch file.");
+  }
+
+  fout.close();
+  if (!fout.good()) {
+    LOG_ERR("Error writing relaunch file.");
+  }
+}
+
+bool file_exists(const std::string &filename) {
+  std::ifstream file(filename);
+  return file.good();
+}
+
+void create_directory(const std::string &dirname) {
+  if(dirname == "") {
+    return;
+  }
+
+  auto dir = fs::path(dirname);
+  fs::create_directories(dir);
+
+  LOG_ERR_IF(!fs::is_directory(dir),
+             string_format("Failed to create directory. [%s]", dirname.c_str()));
+}
+
+std::string stem(const std::string &filename) {
+  return fs::path(filename).stem();
+}
+
+std::string basename(const std::string &filename) {
+  return fs::path(filename).filename();
+}
+
+std::string dirname(const std::string &filename) {
+  auto p = fs::path(filename);
+  return p.remove_filename();
+}
+
+void ensure_directory_exists(const std::string &filename) {
+  create_directory(dirname(filename));
+}
+
+}
