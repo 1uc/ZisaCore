@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     base_directory = "src/"
     for d in find_subdirectories(base_directory):
-        recurse(d, {"generic": "zisa_core"})
+        recurse(d, {"generic": "core"})
         append_to_file(cmake_file, add_subdirectory(base_directory + d))
 
     recurse("test/", {"generic": "core_unit_tests"})

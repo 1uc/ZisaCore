@@ -1,4 +1,4 @@
-target_sources(zisa_core
+target_sources(core
   PRIVATE ${CMAKE_CURRENT_LIST_DIR}/human_readable_size.cpp
   PRIVATE ${CMAKE_CURRENT_LIST_DIR}/indent_block.cpp
   PRIVATE ${CMAKE_CURRENT_LIST_DIR}/join.cpp

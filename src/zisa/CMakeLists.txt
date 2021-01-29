@@ -1,4 +1,4 @@
-target_sources(zisa_core
+target_sources(core
   PRIVATE ${CMAKE_CURRENT_LIST_DIR}/datetime.cpp
 )
 
