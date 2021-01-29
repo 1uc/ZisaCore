@@ -3,6 +3,8 @@
 
 #include <zisa/config.hpp>
 
+#include <limits>
+
 namespace zisa {
 namespace detail {
 template <class To, class From>
