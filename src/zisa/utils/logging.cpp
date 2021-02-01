@@ -11,7 +11,7 @@
 #include <string>
 
 #if ZISA_HAS_MPI != 0
-#include <zisa/mpi/mpi.hpp>
+#include <mpi.h>
 #endif
 
 #include <zisa/utils/string_format.hpp>
@@ -27,7 +27,9 @@ void log_msg(char const *const file,
   ss << file << ":" << line << " [" << severity << "]: ";
 
    #if ZISA_HAS_MPI != 0
-     ss << string_format("[PE %3d] ", zisa::mpi::rank(MPI_COMM_WORLD));
+     int rank = -1;
+     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+     ss << string_format("[PE %3d] ", rank);
    #endif
 
    auto current_time = zisa::time_format(zisa::current_time());

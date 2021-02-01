@@ -2,8 +2,10 @@
 #include "zisa/testing/testing_framework.hpp"
 
 #if ZISA_HAS_MPI == 1
-#include <zisa/mpi/mpi.hpp>
+#include <mpi.h>
 #endif
+
+#include <zisa/config.hpp>
 
 int main( int argc, char* argv[] ) {
 #if ZISA_HAS_MPI == 1

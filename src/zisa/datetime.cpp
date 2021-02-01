@@ -2,7 +2,7 @@
  */
 
 #if ZISA_HAS_MPI == 1
-#include <zisa/mpi/mpi.hpp>
+#include <mpi.h>
 #endif
 
 #include <zisa/datetime.hpp>
