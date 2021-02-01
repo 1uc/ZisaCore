@@ -29,7 +29,7 @@ target_include_directories(core PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 target_link_libraries(core PUBLIC core_dependencies)
-target_link_libraries(core PRIVATE warning_flags)
+target_link_libraries(core PRIVATE core_warning_flags)
 
 # -- clang tidy ----------------------------------------------------------------
 if(CLANG_TIDY_EXE)
@@ -53,7 +53,7 @@ install(
 
 add_library(Zisa::core ALIAS core)
 install(
-  TARGETS core core_dependencies
+  TARGETS core core_dependencies core_warning_flags
   EXPORT ZisaCoreTargets
 )
 include(GNUInstallDirs)
