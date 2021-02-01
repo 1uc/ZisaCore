@@ -21,7 +21,8 @@ endif()
 
 # -- Zisa ----------------------------------------------------------------------
 # -- core ----------------------------------------------------------------------
-add_library(core SHARED "")
+add_library(core STATIC "")
+set_target_properties(core PROPERTIES POSITION_INDEPENDENT_CODE ON)
 set_target_properties(core PROPERTIES OUTPUT_NAME zisa_core)
 set_target_properties(core PROPERTIES CXX_STANDARD 17)
 target_include_directories(core PUBLIC
