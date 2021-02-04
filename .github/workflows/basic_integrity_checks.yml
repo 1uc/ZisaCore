@@ -9,14 +9,14 @@ on:
   # Allows running this workflow manually from the Actions tab.
   workflow_dispatch:
 
-strategy:
-  matrix:
-    compiler: [[gcc, g++], [clang, clang++]]
-    zisa_has_mpi: [0, 1]
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        compiler: [[gcc, g++], [clang, clang++]]
+        zisa_has_mpi: [0, 1]
 
     env:
       COMPILER: ${{ matrix.compiler[0] }}
