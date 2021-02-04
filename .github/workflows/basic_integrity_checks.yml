@@ -15,11 +15,16 @@ jobs:
 
     env:
       COMPILER: gcc
-      INSTALL_ROOT: ${GITHUB_WORKSPACE}/zisa_dependencies
+      INSTALL_ROOT: ${HOME}/zisa_dependencies
 
     steps:
       # Checks-out the repository.
       - uses: actions/checkout@v2
+
+      - name: Install conan
+        run: |
+          pip3 install conan
+          export PATH=${PATH}:${HOME}/.local/bin
 
       - name: Set environment variables
         run: |
