@@ -13,15 +13,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      COMPILER: gcc
+      INSTALL_ROOT: ${GITHUB_WORKSPACE}/zisa_dependencies
+
     steps:
       # Checks-out the repository.
       - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: |
+          export INSTALL_DIR=$(bin/install_dir.sh ${COMPILER} ${INSTALL_ROOT})
+
+      - name: Install dependencies
+        run: |
+          bin/install_dependencies.sh ${COMPILER} ${INSTALL_ROOT}
 
       - name: Configure build
         run: |
           mkdir build
           cd build
-          cmake ..
+          cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}/zisa \
+                -DCMAKE_PREFIX_PATH=${INSTALL_DIR}/zisa/lib/cmake/zisa \
+                -DCMAKE_PROJECT_ZisaCore_INCLUDE=${INSTALL_DIR}/conan/conan_paths.cmake \
+                -DCMAKE_BUILD_TYPE=Release \
+                ..
 
       - name: Build everying
         run: |
