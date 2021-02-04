@@ -16,7 +16,6 @@ jobs:
     env:
       COMPILER: gcc
       INSTALL_ROOT: ${HOME}/zisa_dependencies
-      PATH: ${PATH}:${HOME}/.local/bin
 
     steps:
       # Checks-out the repository.
@@ -29,6 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          export PATH=${PATH}:${HOME}/.local/bin
           bin/install_dependencies.sh ${COMPILER} ${INSTALL_ROOT}
 
       - name: Configure build
