@@ -6,16 +6,24 @@ on:
   pull_request:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows running this workflow manually from the Actions tab.
   workflow_dispatch:
+
+strategy:
+  matrix:
+    compiler: [[gcc, g++], [clang, clang++]]
+    zisa_has_mpi: [0, 1]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     env:
-      COMPILER: gcc
+      COMPILER: ${{ matrix.compiler[0] }}
+      ZISA_HAS_MPI: ${{ matrix.zisa_has_mpi }}
       INSTALL_ROOT: ${HOME}/zisa_dependencies
+      CC: ${{ matrix.compiler[0] }}
+      CXX: ${{ matrix.compiler[1] }}
 
     steps:
       # Checks-out the repository.
@@ -29,11 +37,11 @@ jobs:
       - name: Install dependencies
         run: |
           export PATH=${PATH}:${HOME}/.local/bin
-          bin/install_dependencies.sh ${COMPILER} ${INSTALL_ROOT}
+          bin/install_dependencies.sh ${CC} ${INSTALL_ROOT}
 
       - name: Configure build
         run: |
-          export INSTALL_DIR=$(bin/install_dir.sh ${COMPILER} ${INSTALL_ROOT})
+          export INSTALL_DIR=$(bin/install_dir.sh ${CC} ${INSTALL_ROOT})
           echo ${INSTALL_DIR}
           mkdir build
           cd build
@@ -41,6 +49,9 @@ jobs:
                 -DCMAKE_PREFIX_PATH=${INSTALL_DIR}/zisa/lib/cmake/zisa \
                 -DCMAKE_PROJECT_ZisaCore_INCLUDE=${INSTALL_DIR}/conan/conan_paths.cmake \
                 -DCMAKE_BUILD_TYPE=Release \
+                -DCMAKE_C_COMPILER=${CC} \
+                -DCMAKE_CXX_COMPILER=${CXX} \
+                -DZISA_HAS_MPI=${ZISA_HAS_MPI} \
                 ..
 
       - name: Build everying
