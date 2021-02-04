@@ -23,6 +23,7 @@ jobs:
 
       - name: Install conan
         run: |
+          pip3 install wheel setuptools
           pip3 install conan
           export PATH=${PATH}:${HOME}/.local/bin
 
