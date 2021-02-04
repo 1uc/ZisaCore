@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        compiler: [[gcc, g++], [clang, clang++]]
+        compiler: [[gcc, g++]]
         zisa_has_mpi: [0, 1]
 
     env:
@@ -41,6 +41,7 @@ jobs:
 
       - name: Configure build
         run: |
+          which mpic++
           export INSTALL_DIR=$(bin/install_dir.sh ${CC} ${INSTALL_ROOT})
           echo ${INSTALL_DIR}
           mkdir build
