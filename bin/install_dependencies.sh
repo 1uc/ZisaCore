@@ -18,3 +18,6 @@ then
    mkdir -p ${install_dir}/conan && cd ${install_dir}/conan
    conan install $conan_file -s compiler.libcxx=libstdc++11
 fi
+
+echo "The dependencies were installed at"
+echo "    ${install_dir}"
