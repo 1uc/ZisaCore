@@ -21,7 +21,7 @@ jobs:
     env:
       COMPILER: ${{ matrix.compiler[0] }}
       ZISA_HAS_MPI: ${{ matrix.zisa_has_mpi }}
-      INSTALL_ROOT: ${HOME}/zisa_dependencies
+      REL_INSTALL_ROOT: zisa_dependencies
       CC: ${{ matrix.compiler[0] }}
       CXX: ${{ matrix.compiler[1] }}
 
@@ -42,14 +42,12 @@ jobs:
       - name: Install dependencies
         run: |
           export PATH=${PATH}:${HOME}/.local/bin
-          bin/install_dependencies.sh ${CC} ${INSTALL_ROOT}
+          bin/install_dependencies.sh ${CC} ${HOME}/${REL_INSTALL_ROOT}
 
       - name: Configure build
         run: |
-          export INSTALL_DIR=$(bin/install_dir.sh ${CC} ${INSTALL_ROOT})
-          echo ${INSTALL_DIR}
-          mkdir build
-          cd build
+          export INSTALL_DIR=$(bin/install_dir.sh ${CC} ${HOME}/${REL_INSTALL_ROOT})
+          mkdir build && cd build
           cmake -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}/zisa \
                 -DCMAKE_PREFIX_PATH=${INSTALL_DIR}/zisa/lib/cmake/zisa \
                 -DCMAKE_PROJECT_ZisaCore_INCLUDE=${INSTALL_DIR}/conan/conan_paths.cmake \
