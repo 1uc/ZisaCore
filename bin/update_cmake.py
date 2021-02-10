@@ -71,17 +71,27 @@ def recurse(base_directory, targets):
         append_to_file(cmake_file, add_subdirectory(base_directory + d))
 
 
+def is_cuda_file(path):
+    return "zisa/cuda/" in path
+
+
 def is_mpi_file(path):
     return "zisa/mpi/" in path
 
 
 def is_generic_file(path):
-    return not is_mpi_file(path)
+    return not any(f(path) for f in [is_mpi_file, is_cuda_file])
 
 
 def select_for(dependency):
     if dependency == "generic":
         return is_generic_file
+
+    elif dependency == "mpi":
+        return is_mpi_file
+
+    elif dependency == "cuda":
+        return is_cuda_file
 
     else:
         raise Exception(f"Unknown dependency. [{dependency}]")
@@ -105,7 +115,7 @@ if __name__ == "__main__":
 
     base_directory = "src/"
     for d in find_subdirectories(base_directory):
-        recurse(d, {"generic": "core"})
+        recurse(d, {"generic": "core_generic_obj", "cuda": "core_cuda_obj"})
         append_to_file(cmake_file, add_subdirectory(base_directory + d))
 
     recurse("test/", {"generic": "core_unit_tests"})

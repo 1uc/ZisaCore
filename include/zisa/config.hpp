@@ -8,7 +8,7 @@ namespace zisa {
 using int_t = std::size_t;
 } // namespace zisa
 
-#ifndef USE_CUDA
+#ifndef ZISA_HAS_CUDA
 
 #ifndef __host__
 #define __host__
@@ -23,8 +23,7 @@ using int_t = std::size_t;
 #endif
 
 #else
-#include <cuda.h>
-#include <cuda_runtime.h>
+#include <zisa/cuda/cuda.hpp>
 #endif
 
 #define ANY_DEVICE __host__ __device__

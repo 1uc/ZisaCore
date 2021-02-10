@@ -46,7 +46,7 @@ ANY_DEVICE_INLINE double pow(double x, double y) {
 
 ANY_DEVICE_INLINE float pow(float x, float y) {
 #ifdef __CUDACC__
-  LOG_ERR("CHECK exact name.");
+  return ::pow(x, y);
 #else
   return std::pow(x, y);
 #endif
@@ -126,6 +126,11 @@ ANY_DEVICE_INLINE T avg(const T &a, const T &b) {
 
 /// Integer division, but round up.
 ANY_DEVICE_INLINE int div_up(const int i, const int n) {
+  return (i + n - 1) / n;
+}
+
+/// Integer division, but round up.
+ANY_DEVICE_INLINE int_t div_up(const int_t i, const int_t n) {
   return (i + n - 1) / n;
 }
 
