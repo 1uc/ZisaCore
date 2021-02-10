@@ -64,11 +64,30 @@ def recurse(base_directory, targets):
 
     for dependency, target in targets.items():
         filtered_sources = list(filter(select_for(dependency), source_files))
-        append_to_file(cmake_file, format_sources(target, filtered_sources))
+
+        if dependency == "generic":
+            append_to_file(cmake_file, format_sources(target, filtered_sources))
+
+        elif dependency == "mpi":
+            append_to_file(cmake_file, "if(ZISA_HAS_MPI)\n\n")
+            append_to_file(cmake_file, format_sources(target, filtered_sources))
+            append_to_file(cmake_file, "endif()\n")
+
+        elif dependency == "cuda":
+            append_to_file(cmake_file, "if(ZISA_HAS_CUDA)\n\n")
+            append_to_file(cmake_file, format_sources(target, filtered_sources))
+            append_to_file(cmake_file, "endif()\n")
+
+        else:
+            raise Exception("Unknown dependency. [{}]".format(dependency))
 
     for d in find_subdirectories(base_directory):
         recurse(d, targets)
         append_to_file(cmake_file, add_subdirectory(base_directory + d))
+
+
+def is_cuda_file(path):
+    return "zisa/cuda/" in path
 
 
 def is_mpi_file(path):
@@ -76,12 +95,18 @@ def is_mpi_file(path):
 
 
 def is_generic_file(path):
-    return not is_mpi_file(path)
+    return not any(f(path) for f in [is_mpi_file, is_cuda_file])
 
 
 def select_for(dependency):
     if dependency == "generic":
         return is_generic_file
+
+    elif dependency == "mpi":
+        return is_mpi_file
+
+    elif dependency == "cuda":
+        return is_cuda_file
 
     else:
         raise Exception(f"Unknown dependency. [{dependency}]")
@@ -105,7 +130,7 @@ if __name__ == "__main__":
 
     base_directory = "src/"
     for d in find_subdirectories(base_directory):
-        recurse(d, {"generic": "core"})
+        recurse(d, {"generic": "core_generic_obj", "cuda": "core_cuda_obj"})
         append_to_file(cmake_file, add_subdirectory(base_directory + d))
 
     recurse("test/", {"generic": "core_unit_tests"})

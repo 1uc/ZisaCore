@@ -26,18 +26,59 @@ if(ZISA_HAS_MPI)
   target_link_libraries(core_dependencies INTERFACE MPI::MPI_CXX)
 endif()
 
+# CUDA
+if(ZISA_HAS_CUDA)
+  find_package(CUDAToolkit REQUIRED)
+  target_compile_definitions(core_dependencies INTERFACE ZISA_HAS_CUDA=1)
+
+  target_compile_options(core_dependencies INTERFACE
+    $<BUILD_INTERFACE:$<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>>
+  )
+  target_link_libraries(core_dependencies INTERFACE CUDA::cudart)
+endif()
+
 # -- Zisa ----------------------------------------------------------------------
 # -- core ----------------------------------------------------------------------
-add_library(core STATIC "")
-set_target_properties(core PROPERTIES POSITION_INDEPENDENT_CODE ON)
+add_library(core_generic_obj OBJECT)
+set_target_properties(core_generic_obj PROPERTIES POSITION_INDEPENDENT_CODE ON)
+set_target_properties(core_generic_obj PROPERTIES CXX_STANDARD 17)
+target_include_directories(core_generic_obj PUBLIC
+  $<BUILD_INTERFACE:${ZisaCore_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+  )
+target_link_libraries(core_generic_obj PUBLIC core_dependencies)
+target_link_libraries(core_generic_obj PRIVATE core_warning_flags)
+
+if(ZISA_HAS_CUDA)
+  add_library(core_cuda_obj OBJECT)
+  set_target_properties(core_cuda_obj PROPERTIES POSITION_INDEPENDENT_CODE ON)
+  set_target_properties(core_cuda_obj PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
+  set_target_properties(core_cuda_obj PROPERTIES CUDA_STANDARD 11)
+  set_target_properties(core_cuda_obj PROPERTIES CXX_STANDARD 17)
+  target_include_directories(core_cuda_obj PUBLIC
+    $<BUILD_INTERFACE:${ZisaCore_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+    )
+  target_link_libraries(core_cuda_obj PUBLIC core_dependencies)
+  target_link_libraries(core_cuda_obj PRIVATE core_warning_flags)
+endif()
+
+add_library(core STATIC)
 set_target_properties(core PROPERTIES OUTPUT_NAME zisa_core)
-set_target_properties(core PROPERTIES CXX_STANDARD 17)
+target_sources(core PRIVATE $<TARGET_OBJECTS:core_generic_obj>)
+
+if(ZISA_HAS_CUDA)
+  target_sources(core PRIVATE $<TARGET_OBJECTS:core_cuda_obj>)
+  set_target_properties(core PROPERTIES CUDA_RESOLVE_DEVICE_SYMBOLS ON)
+endif()
+
 target_include_directories(core PUBLIC
   $<BUILD_INTERFACE:${ZisaCore_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
 target_link_libraries(core PUBLIC core_dependencies)
 target_link_libraries(core PRIVATE core_warning_flags)
+
 
 # -- clang tidy ----------------------------------------------------------------
 if(CLANG_TIDY_EXE)
