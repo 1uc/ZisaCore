@@ -125,7 +125,7 @@ target_include_directories(core_unit_tests PUBLIC test)
 target_link_libraries(core_unit_tests PUBLIC Zisa::core Catch2::Catch2)
 
 enable_testing()
-add_test(NAME UnitTests COMMAND unit_tests)
+add_test(NAME ZisaCoreUnitTests COMMAND unit_tests)
 
 # -- Subdirectories ------------------------------------------------------------
 add_subdirectory(src)
