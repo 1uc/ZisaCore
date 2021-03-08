@@ -52,29 +52,36 @@ ANY_DEVICE_INLINE float pow(float x, float y) {
 #endif
 }
 
+namespace internal {
+template <class T>
+struct StaticPowTrait {
+  ANY_DEVICE_INLINE constexpr static T one() { return T(1.0); }
+};
+
+template <int n, class T>
+struct StaticPowImpl {
+  ANY_DEVICE_INLINE constexpr static T value(T x) {
+    return x * StaticPowImpl<n - 1, T>::value(x);
+  }
+};
+
+template <class T>
+struct StaticPowImpl<1, T> {
+  ANY_DEVICE_INLINE constexpr static T value(T x) { return x; }
+};
+
+template <class T>
+struct StaticPowImpl<0, T> {
+  ANY_DEVICE_INLINE constexpr static T value(T) {
+    return StaticPowTrait<T>::one();
+  }
+};
+}
+
 template <int n, class T>
 ANY_DEVICE_INLINE constexpr T pow(T x) {
-  return x * pow<n - 1>(x);
-}
-
-template <>
-ANY_DEVICE_INLINE constexpr double pow<0>(double) {
-  return double(1);
-}
-
-template <>
-ANY_DEVICE_INLINE constexpr int pow<0>(int) {
-  return int(1);
-}
-
-template <>
-ANY_DEVICE_INLINE constexpr double pow<1>(double x) {
-  return x;
-}
-
-template <>
-ANY_DEVICE_INLINE constexpr int pow<1>(int x) {
-  return x;
+  static_assert(n >= 0, "Use `1.0 / pow<n>(x)` instead.");
+  return zisa::internal::StaticPowImpl<n, T>::value(x);
 }
 
 ANY_DEVICE_INLINE double sqrt(double x) { return ::sqrt(x); }
