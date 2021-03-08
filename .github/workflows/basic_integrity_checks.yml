@@ -29,6 +29,10 @@ jobs:
       # Checks-out the repository.
       - uses: actions/checkout@v2
 
+      - name: Update Ubuntu
+        run: |
+          sudo apt-get update -y
+
       - name: Install MPI
         if: matrix.zisa_has_mpi == 1
         run: |
