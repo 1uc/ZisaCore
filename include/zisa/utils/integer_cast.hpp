@@ -8,7 +8,10 @@
 namespace zisa {
 namespace detail {
 template <class To, class From>
-class IntegerCast;
+class IntegerCast {
+  static_assert(!std::is_same<To, To>::value,
+      "zisa::IntegerCast is not specialized for the given input types");
+};
 
 template <>
 class IntegerCast<int, size_t> {
