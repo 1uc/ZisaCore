@@ -30,6 +30,23 @@ public:
 };
 
 template <>
+class IntegerCast<unsigned, size_t> {
+public:
+  static ANY_DEVICE_INLINE unsigned cast(size_t i) {
+    assert(i <= size_t(std::numeric_limits<unsigned>::max()));
+    return unsigned(i);
+  }
+};
+
+template <>
+class IntegerCast<size_t, unsigned> {
+public:
+  static ANY_DEVICE_INLINE size_t cast(unsigned i) {
+    return size_t(i);
+  }
+};
+
+template <>
 class IntegerCast<unsigned long long int, long unsigned int> {
 private:
   using To = unsigned long long int;
