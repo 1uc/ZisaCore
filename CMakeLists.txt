@@ -33,7 +33,7 @@ endif()
 if(ZISA_HAS_MPI)
   target_compile_definitions(core_dependencies INTERFACE ZISA_HAS_MPI=1)
 
-  if(ZISA_HAS_MPI != 2)
+  if(NOT ZISA_HAS_MPI EQUAL 2)
     find_package(MPI REQUIRED COMPONENTS CXX)
     target_link_libraries(core_dependencies INTERFACE MPI::MPI_CXX)
   endif()
