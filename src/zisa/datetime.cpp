@@ -1,7 +1,7 @@
 /* Collection of routines to manipulate dates and times.
  */
 
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
 #include <mpi.h>
 #endif
 
@@ -67,7 +67,7 @@ double elapsed_seconds_since(const zisa::time_stamp_t &reference) {
 
 /// Get a time-stamp of the current time.
 zisa::time_stamp_t current_time_stamp() {
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
   return MPI_Wtime();
 #else
   return time(0);

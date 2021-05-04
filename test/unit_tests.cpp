@@ -1,14 +1,14 @@
 #define CATCH_CONFIG_RUNNER
 #include "zisa/testing/testing_framework.hpp"
 
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
 #include <mpi.h>
 #endif
 
 #include <zisa/config.hpp>
 
 int main( int argc, char* argv[] ) {
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
   int requested = MPI_THREAD_MULTIPLE;
   int provided = -1;
 
@@ -19,7 +19,7 @@ int main( int argc, char* argv[] ) {
 
   int result = Catch::Session().run( argc, argv );
 
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
   MPI_Finalize();
 #endif
 

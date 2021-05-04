@@ -8,7 +8,7 @@
 
 #define ZISA_CHECK_CUDA zisa::check_cuda_error(__FILE__, __LINE__);
 
-#if ZISA_NO_CHECK_CUDA_DEBUG == 1
+#if ZISA_NO_CHECK_CUDA_DEBUG
 #define ZISA_CHECK_CUDA_DEBUG
 #else
 #define ZISA_CHECK_CUDA_DEBUG zisa::check_cuda_error(__FILE__, __LINE__);
