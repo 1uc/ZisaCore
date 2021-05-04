@@ -10,7 +10,7 @@
 #include <string>
 
 namespace zisa {
-#if ZISA_HAS_MPI == 1
+#if ZISA_HAS_MPI
 using time_stamp_t = double;
 #else
 using time_stamp_t = std::time_t;
