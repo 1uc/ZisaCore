@@ -29,15 +29,16 @@ bool file_exists(const std::string &filename) {
 }
 
 void create_directory(const std::string &dirname) {
-  if(dirname == "") {
+  if (dirname == "") {
     return;
   }
 
   auto dir = fs::path(dirname);
   fs::create_directories(dir);
 
-  LOG_ERR_IF(!fs::is_directory(dir),
-             string_format("Failed to create directory. [%s]", dirname.c_str()));
+  LOG_ERR_IF(
+      !fs::is_directory(dir),
+      string_format("Failed to create directory. [%s]", dirname.c_str()));
 }
 
 std::string stem(const std::string &filename) {
