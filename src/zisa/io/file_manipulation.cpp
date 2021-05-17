@@ -1,9 +1,3 @@
-/* Safely write a string to file.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-02-09
- */
-
 #include <experimental/filesystem>
 
 #include <zisa/io/file_manipulation.hpp>

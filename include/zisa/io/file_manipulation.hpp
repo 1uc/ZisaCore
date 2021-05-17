@@ -1,8 +1,3 @@
-/* Safely write a string to file.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-02-09
- */
 #ifndef WRITE_STRING_TO_FILE_H_PAMZW0U5
 #define WRITE_STRING_TO_FILE_H_PAMZW0U5
 #include <fstream>

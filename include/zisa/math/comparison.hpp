@@ -1,8 +1,3 @@
-/* Comparison operations like min, max, almost_equal, etc.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-01-12
- */
 #ifndef COMPARISON_H_3PO4FDB7
 #define COMPARISON_H_3PO4FDB7
 

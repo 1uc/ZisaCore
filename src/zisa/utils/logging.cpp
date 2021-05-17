@@ -1,8 +1,3 @@
-/* Initialization for boost::log
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2014-09-09
- */
 #include <zisa/utils/logging.hpp>
 
 #include <cstdlib>

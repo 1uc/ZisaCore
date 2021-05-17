@@ -1,8 +1,3 @@
-/* Collection of routines to manipulate dates and times.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-12-11
- */
 #ifndef DATETIME_H_TZXNLSQO
 #define DATETIME_H_TZXNLSQO
 

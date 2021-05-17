@@ -1,8 +1,3 @@
-/* Includes and condif for boost::log.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2014-09-09
- */
 #ifndef LOGGING_HPP_B0KMI7N1
 #define LOGGING_HPP_B0KMI7N1
 

@@ -1,8 +1,3 @@
-/* Check that a floating point number is a real number.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-01-12
- */
 #ifndef ISREAL_H_M87B3AXT
 #define ISREAL_H_M87B3AXT
 

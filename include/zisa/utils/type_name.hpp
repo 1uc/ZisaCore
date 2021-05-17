@@ -4,8 +4,6 @@
  *
  * [1]: http://stackoverflow.com/a/20170989/5103043
  *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2015-08-21
  */
 #ifndef TYPEOF_H_FTOYTX9N
 #define TYPEOF_H_FTOYTX9N

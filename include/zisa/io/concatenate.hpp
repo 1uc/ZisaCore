@@ -1,8 +1,3 @@
-/* Concatenate strings.
- *
- * Authors: Luc Grosheintz <forbugrep@zoho.com>
- *    Date: 2016-07-27
- */
 #ifndef CONCATENATE_H_L3KZSHB0
 #define CONCATENATE_H_L3KZSHB0
 
