@@ -26,13 +26,13 @@ void log_msg(char const *const file,
 
   ss << file << ":" << line << " [" << severity << "]: ";
 
-   #if ZISA_HAS_MPI != 0
-     int rank = -1;
-     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-     ss << string_format("[PE %3d] ", rank);
-   #endif
+#if ZISA_HAS_MPI != 0
+  int rank = -1;
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  ss << string_format("[PE %3d] ", rank);
+#endif
 
-   auto current_time = zisa::time_format(zisa::current_time());
+  auto current_time = zisa::time_format(zisa::current_time());
 
   ss << current_time << "  " << msg << "\n";
 
