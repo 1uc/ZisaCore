@@ -15,7 +15,7 @@ compiler_version="$("$compiler" -dumpversion)"
 build_mangled_name="${compiler}__${compiler_version}"
 build_sha="$(echo "${build_mangled_name}" | sha1sum | head -c 6)"
 
-install_root="${PWD}/$2"
+install_root=$(realpath -ms "$2")
 install_dir="${install_root}/${build_sha}"
 
 echo "${install_dir}"
