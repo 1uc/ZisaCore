@@ -14,8 +14,8 @@
 #include <mpi.h>
 #endif
 
-#include <zisa/utils/string_format.hpp>
 #include <zisa/datetime.hpp>
+#include <zisa/utils/string_format.hpp>
 
 void log_msg(char const *const file,
              const int line,
