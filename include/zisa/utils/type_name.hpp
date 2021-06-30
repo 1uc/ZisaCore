@@ -25,6 +25,7 @@
 #include <memory>
 #include <string>
 
+namespace zisa {
 template <class T>
 std::string type_name(bool with_decoration = true) {
   using TR = typename std::remove_reference<T>::type;
@@ -52,5 +53,8 @@ std::string type_name(bool with_decoration = true) {
 
   return r;
 }
+}
+
+using zisa::type_name; // deprecate
 
 #endif /* end of include guard: TYPEOF_H_FTOYTX9N */
