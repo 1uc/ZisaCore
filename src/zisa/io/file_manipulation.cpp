@@ -28,6 +28,8 @@ bool file_exists(const std::string &filename) {
   return file.good();
 }
 
+void delete_file(const std::string &filename) { fs::remove(filename); }
+
 void create_directory(const std::string &dirname) {
   if (dirname == "") {
     return;
