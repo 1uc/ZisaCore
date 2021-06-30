@@ -4,6 +4,7 @@ set -e
 if [[ "$#" -ne 2 ]]
 then
     echo "Usage: $0 COMPILER DESTINATION"
+    exit -1
 fi
 
 component_name="ZisaCore"
@@ -25,6 +26,4 @@ echo ""
 echo "Use"
 echo "    cmake -DCMAKE_PROJECT_${component_name}_INCLUDE=${install_dir}/conan/conan_paths.cmake \\ "
 echo "          -DCMAKE_MODULE_PATH=${install_dir}/conan \\ "
-echo "          -DCMAKE_C_COMPILER=${CC} \\ "
-echo "          -DCMAKE_CXX_COMPILER=${CXX} \\ "
 echo "          REMAINING_ARGS "
