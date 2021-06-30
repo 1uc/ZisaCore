@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef CONCATENATE_H_L3KZSHB0
 #define CONCATENATE_H_L3KZSHB0
 

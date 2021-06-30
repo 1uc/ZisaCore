@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef ZISA_INTEGER_CAST_HPP_ICHUW
 #define ZISA_INTEGER_CAST_HPP_ICHUW
 

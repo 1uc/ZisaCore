@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 /* If an object can write to a stream, `zisa::to_string` will return what would
  * have been written to the stream as a string.
  *

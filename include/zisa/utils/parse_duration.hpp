@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef PARSE_DURATION_H_6H1LW
 #define PARSE_DURATION_H_6H1LW
 

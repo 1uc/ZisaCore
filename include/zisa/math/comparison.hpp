@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef COMPARISON_H_3PO4FDB7
 #define COMPARISON_H_3PO4FDB7
 

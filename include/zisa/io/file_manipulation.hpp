@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef WRITE_STRING_TO_FILE_H_PAMZW0U5
 #define WRITE_STRING_TO_FILE_H_PAMZW0U5
 #include <fstream>

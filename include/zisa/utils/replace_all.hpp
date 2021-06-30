@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef REPLACE_ALL_H_M4F3M
 #define REPLACE_ALL_H_M4F3M
 

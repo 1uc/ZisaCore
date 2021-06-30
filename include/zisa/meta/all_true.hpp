@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef ALL_TRUE_H_DD6Y1
 #define ALL_TRUE_H_DD6Y1
 

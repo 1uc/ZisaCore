@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #include <experimental/filesystem>
 
 #include <zisa/io/file_manipulation.hpp>

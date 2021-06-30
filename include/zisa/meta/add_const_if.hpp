@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef ADD_CONST_IF_H_PKUZS
 #define ADD_CONST_IF_H_PKUZS
 

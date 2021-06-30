@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef ISREAL_H_M87B3AXT
 #define ISREAL_H_M87B3AXT
 

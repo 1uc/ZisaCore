@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef IF_T_H_DBUU1
 #define IF_T_H_DBUU1
 namespace zisa {

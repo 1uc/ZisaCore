@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef CHECK_CUDA_ERROR_HPP_NQDGL
 #define CHECK_CUDA_ERROR_HPP_NQDGL
 

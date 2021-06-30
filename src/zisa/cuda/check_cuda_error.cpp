@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #include <zisa/cuda/check_cuda_error.hpp>
 
 #include <zisa/utils/string_format.hpp>

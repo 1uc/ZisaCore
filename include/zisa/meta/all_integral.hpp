@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef AL_INTEGRAL_H_AM7Z3
 #define AL_INTEGRAL_H_AM7Z3
 

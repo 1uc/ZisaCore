@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef INDENT_BLOCK_H_RL3BG
 #define INDENT_BLOCK_H_RL3BG
 

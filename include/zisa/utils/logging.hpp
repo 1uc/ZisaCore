@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef LOGGING_HPP_B0KMI7N1
 #define LOGGING_HPP_B0KMI7N1
 

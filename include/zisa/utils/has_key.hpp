@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
+
 #ifndef HAS_KEY_H_9TX4O
 #define HAS_KEY_H_9TX4O
 
