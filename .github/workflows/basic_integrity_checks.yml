@@ -46,8 +46,7 @@ jobs:
       - name: Install dependencies
         run: |
           export PATH=${PATH}:${HOME}/.local/bin
-          bin/install_dependencies.sh ${CC} ${HOME}/${REL_INSTALL_ROOT} \
-                                      --zisa_has_mpi=${ZISA_HAS_MPI} 
+          bin/install_dependencies.sh ${CC} ${HOME}/${REL_INSTALL_ROOT}
 
       - name: Configure build
         run: |
