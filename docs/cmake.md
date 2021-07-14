@@ -16,10 +16,6 @@ In order to actually compile one can type
 
     $ cmake --build ${BUILD_DIR} --parallel $(nproc)
 
-which is essentially
-
-    $ cd ${BUILD_DIR}; make -j $(nproc); cd -
-
 Finally, it pays to check if the compilation commands correspond to something
 meaningful. Which is achieved by `make VERBOSE=1`.
 
@@ -55,9 +51,9 @@ dependencies should be used:
 
 Further, you should choose a build type:
 
-  * `Debug` CMake built in.
+  * `Debug` the CMake built in, essentially just `-g`.
   * `FastDebug` optimized build with debug symbols and assertions.
-  * `Release` CMake built in.
+  * `Release` the CMake built in, essentially `-O3 -DNDEBUG`.
 
 Running an unoptimized build can be very slow. Therefore, if you need only
 semi-meaningful backtraces and want assertions, `FastDebug` is a good
