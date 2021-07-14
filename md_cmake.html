@@ -92,7 +92,6 @@ CMake Primer</h1>
 <p>The most simple and often practical way of using CMake is on the command line to generate Make files. This can be done by </p><pre class="fragment">$ cmake ${MANY_FLAGS} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -B ${BUILD_DIR}
 </pre><p> which will set up everything in the folder <code>${BUILD_DIR}</code> mostly called <code>build</code> and virtually never <code>.</code>. Nothing stops you from having several build folders each using either different dependencies or compilers.</p>
 <p>In order to actually compile one can type </p><pre class="fragment">$ cmake --build ${BUILD_DIR} --parallel $(nproc)
-</pre><p> which is essentially </p><pre class="fragment">$ cd ${BUILD_DIR}; make -j $(nproc); cd -
 </pre><p> Finally, it pays to check if the compilation commands correspond to something meaningful. Which is achieved by <code>make VERBOSE=1</code>.</p>
 <p>Equipped with this knowledge using CMake revolves around finding the correct value for <code>${MANY_FLAGS}</code>, see <a class="el" href="md_cmake.html#cmake_flags">Project specific flags</a> for help with this problem.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
@@ -112,9 +111,9 @@ Project specific flags</h1>
 </ul>
 <p>Further, you should choose a build type:</p>
 <ul>
-<li><code>Debug</code> CMake built in.</li>
+<li><code>Debug</code> the CMake built in, essentially just <code>-g</code>.</li>
 <li><code>FastDebug</code> optimized build with debug symbols and assertions.</li>
-<li><code>Release</code> CMake built in.</li>
+<li><code>Release</code> the CMake built in, essentially <code>-O3 -DNDEBUG</code>.</li>
 </ul>
 <p>Running an unoptimized build can be very slow. Therefore, if you need only semi-meaningful backtraces and want assertions, <code>FastDebug</code> is a good choice. Now, for more specialized settings we provide:</p>
 <ul>
