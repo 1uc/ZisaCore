@@ -24,7 +24,7 @@ Finally, it pays to check if the compilation commands correspond to something
 meaningful. Which is achieved by `make VERBOSE=1`.
 
 Equipped with this knowledge using CMake revolves around finding the correct
-value for `${MANY_FLAGS}`, see [Project specific flags](#cmake_flags) for help
+value for `${MANY_FLAGS}`, see [Project specific flags](@ref cmake_flags) for help
 with this problem.
 
 ### Globbing source files

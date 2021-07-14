@@ -18,6 +18,6 @@ If this worked continue by adding [project specific flags] to the CMake
 command. If not it's not going to be a quick start. Please read
 [Dependencies] and then [Building].
 
-[project specific flags]: cmake.md#cmake_flags
+[project specific flags]: @ref cmake_flags
 [Dependencies]: dependencies.md
 [Building]: cmake.md
