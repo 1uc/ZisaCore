@@ -1,10 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
 
-/*
- *
- */
-
 #ifndef FORMAT_AS_LIST_H_H0M8C
 #define FORMAT_AS_LIST_H_H0M8C
 

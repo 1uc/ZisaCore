@@ -12,8 +12,9 @@ namespace zisa {
 namespace detail {
 template <class To, class From>
 class IntegerCast {
-  static_assert(!std::is_same<To, To>::value,
-                "zisa::detail::IntegerCast is not specialized for the given input types");
+  static_assert(
+      !std::is_same<To, To>::value,
+      "zisa::detail::IntegerCast is not specialized for the given input types");
 };
 
 template <>
@@ -47,25 +48,23 @@ public:
 template <>
 class IntegerCast<size_t, unsigned> {
 public:
-  static ANY_DEVICE_INLINE size_t cast(unsigned i) {
-    return size_t(i);
-  }
+  static ANY_DEVICE_INLINE size_t cast(unsigned i) { return size_t(i); }
 };
 
 template <>
-class IntegerCast<unsigned long long int, long unsigned int> {
+class IntegerCast<unsigned long long int, unsigned long int> {
 private:
   using To = unsigned long long int;
-  using From = long unsigned int;
+  using From = unsigned long int;
 
 public:
   static ANY_DEVICE_INLINE To cast(From i) { return To(i); }
 };
 
 template <>
-class IntegerCast<long unsigned int, unsigned long long int> {
+class IntegerCast<unsigned long int, unsigned long long int> {
 private:
-  using To = long unsigned int;
+  using To = unsigned long int;
   using From = unsigned long long int;
 
 public:
