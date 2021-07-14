@@ -94,7 +94,7 @@ CMake Primer</h1>
 <p>In order to actually compile one can type </p><pre class="fragment">$ cmake --build ${BUILD_DIR} --parallel $(nproc)
 </pre><p> which is essentially </p><pre class="fragment">$ cd ${BUILD_DIR}; make -j $(nproc); cd -
 </pre><p> Finally, it pays to check if the compilation commands correspond to something meaningful. Which is achieved by <code>make VERBOSE=1</code>.</p>
-<p>Equipped with this knowledge using CMake revolves around finding the correct value for <code>${MANY_FLAGS}</code>, see <a href="#cmake_flags">Project specific flags</a> for help with this problem.</p>
+<p>Equipped with this knowledge using CMake revolves around finding the correct value for <code>${MANY_FLAGS}</code>, see <a class="el" href="md_cmake.html#cmake_flags">Project specific flags</a> for help with this problem.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
 Globbing source files</h2>
 <p>The convincing argument for not globbing source files is that if one switches Git branches files might appear or vanish; and if <code>CMakeLists.txt</code> does not change (very likely), then <code>cmake</code> won't be run again, resulting in a misconfigured build.</p>
