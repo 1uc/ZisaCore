@@ -1,9 +1,0 @@
-@INCLUDE = Doxyfile.default
-
-PROJECT_NAME           = "ZisaCore"
-EXTRACT_ALL            = YES
-INPUT                  = mainpage.md dependencies.md cmake.md conan.md contributing.md ../src ../include
-RECURSIVE              = YES
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
-GENERATE_TREEVIEW      = YES
-GENERATE_LATEX         = NO
