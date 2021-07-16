@@ -1,4 +1,6 @@
 # ZisaCore
+![](https://github.com/1uc/ZisaCore/actions/workflows/basic_integrity_checks.yml/badge.svg)
+
 ZisaCore is a minimal collection of functionality without which the other
 libraries can't be written. Most notably it includes logging, file and string
 related functions. As well as abstractions for the CUDA related function
