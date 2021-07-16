@@ -77,7 +77,8 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ]
+    ] ],
+    [ "Github Page", "^https://github.com/1uc/ZisaCore", null ]
   ] ]
 ];
 
