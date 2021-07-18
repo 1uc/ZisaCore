@@ -1,6 +1,6 @@
 # ZisaCore
-[![Build Status](https://github.com/1uc/ZisaCore/actions/workflows/basic_integrity_checks.yml/badge.svg?event=push)](https://github.com/1uc/ZisaCore/actions)
-[![Docs Status](https://github.com/1uc/ZisaCore/actions/workflows/publish_docs.yml/badge.svg?event=push)](https://1uc.github.io/ZisaCore)
+[![Build Status](https://github.com/1uc/ZisaCore/actions/workflows/basic_integrity_checks.yml/badge.svg?branch=main)](https://github.com/1uc/ZisaCore/actions)
+[![Docs Status](https://github.com/1uc/ZisaCore/actions/workflows/publish_docs.yml/badge.svg?branch=main)](https://1uc.github.io/ZisaCore)
 
 ZisaCore is a minimal collection of functionality without which the other
 libraries can't be written. Most notably it includes logging, file and string
