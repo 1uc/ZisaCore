@@ -12,5 +12,9 @@ interest to anyone.
 Start either by heading over to one of the more interesting libraries
 
    * [ZisaMemory](https://github.com/1uc/ZisaMemory)
+   * [ZisaMPI](https://github.com/1uc/ZisaMPI)
+   * [ZisaTimeStepping](https://github.com/1uc/ZisaTimeStepping)
+   * [ZisaSFC](https://github.com/1uc/ZisaSFC)
+   * [ZisaFVM](https://github.com/1uc/ZisaFVM)
 
 or by reading the [API documentation](https://1uc.github.io/ZisaCore).
