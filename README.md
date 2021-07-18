@@ -13,4 +13,4 @@ Start either by heading over to one of the more interesting libraries
 
    * [ZisaMemory](https://github.com/1uc/ZisaMemory)
 
-or by reading the [API documentation](https://1uc.github.com/ZisaCore).
+or by reading the [API documentation](https://1uc.github.io/ZisaCore).
