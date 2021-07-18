@@ -8,8 +8,6 @@ related functions. As well as abstractions for the CUDA related function
 decorations (`__device__` and friends). In and of itself it is of little
 interest to anyone.
 
-:)
-
 ## Quickstart
 Start either by heading over to one of the more interesting libraries
 
