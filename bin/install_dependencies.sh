@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 
-if [[ "$#" -ne 2 ]]
+if [[ "$#" -lt 2 ]]
 then
     echo "Usage: $0 COMPILER DESTINATION [--print_install_dir]"
     exit -1
