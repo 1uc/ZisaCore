@@ -9,7 +9,7 @@ decorations (`__device__` and friends). In and of itself it is of little
 interest to anyone.
 
 ## Quickstart
-Start either by heading over to one of the more interesing libraries
+Start either by heading over to one of the more interesting libraries
 
    * [ZisaMemory](https://github.com/1uc/ZisaMemory)
 
