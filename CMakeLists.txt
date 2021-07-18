@@ -115,9 +115,16 @@ write_basic_package_version_file(
   COMPATIBILITY SameMajorVersion
 )
 
+configure_file(
+  "${CMAKE_CURRENT_LIST_DIR}/cmake/ZisaCoreConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/ZisaCoreConfig.cmake"
+  @ONLY
+)
+
+
 install(
   FILES
-  "cmake/ZisaCoreConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/ZisaCoreConfig.cmake"
   "${CMAKE_CURRENT_BINARY_DIR}/ZisaCoreConfigVersion.cmake"
   DESTINATION lib/cmake/zisa
 )

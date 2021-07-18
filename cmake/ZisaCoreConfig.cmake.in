@@ -1,0 +1,38 @@
+include(CMakeFindDependencyMacro)
+
+set(ZISA_HAS_MPI @ZISA_HAS_MPI@ CACHE STRING "Is Zisa using MPI, {0, 1, 2}.")
+set(ZISA_HAS_CUDA @ZISA_HAS_CUDA@ CACHE STRING "Is Zisa using CUDA, {0, 1}.")
+
+# MPI
+# ZISA_HAS_MPI == 1
+#   * set ZISA_HAS_MPI=1
+#   * call `find_package`
+#
+# ZISA_HAS_MPI == 2
+#   Sometimes (Piz Daint) the compiler activates MPI by default.
+#   * set ZISA_HAS_MPI=2
+#   * do nothing else, i.e. don't `find_package`.
+if(ZISA_HAS_MPI)
+  if(NOT ZISA_HAS_MPI EQUAL 2)
+    find_dependency(MPI COMPONENTS CXX)
+  endif()
+endif()
+
+# CUDA
+if(ZISA_HAS_CUDA)
+  if(ZISA_HAS_MPI)
+    # MPI adds `-Wl,-rpath` and more to the linker flags.
+    # This then gets translated to `-Xcompiler=-Wl,-rpath`. Which results in an
+    # error along the lines of
+    #   gcc: error: unrecognized command-line option ‘-Wl’; did you mean ‘-W’?
+    # The old policy prevent these flags to be passed on automatically.
+    cmake_policy(SET CMP0105 OLD)
+  endif()
+
+  set(CMAKE_CUDA_ARCHITECTURES @CMAKE_CUDA_ARCHITECTURES@ CACHE STRING "CUDA architechtures.")
+
+
+  find_dependency(CUDAToolkit)
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/ZisaCoreTargets.cmake")
