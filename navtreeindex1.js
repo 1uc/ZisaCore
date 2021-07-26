@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"namespacezisa.html#a0b47083507c860d566c89dffe71cbab5":[7,0,0,48],
-"namespacezisa.html#a0bfe156a3f37329d5aa826120334d532":[7,0,0,57],
-"namespacezisa.html#a0fecae03fb240a4f1fcfaaaf778f1e75":[7,0,0,24],
 "namespacezisa.html#a11107d6be8a0a9dad196d7e4a9b5e713":[7,0,0,19],
 "namespacezisa.html#a14eb4748c34d5a22268ba89b5f56e150":[7,0,0,66],
 "namespacezisa.html#a1bc283eed1bb0c615c7b50f224cf9657":[7,0,0,54],
@@ -117,7 +114,7 @@ var NAVTREEINDEX1 =
 "structzisa_1_1internal_1_1StaticPowTrait.html":[8,0,0,1,0],
 "structzisa_1_1void__t.html":[8,0,0,6],
 "superbuild.html":[5],
-"superbuild.html#autotoc_md28":[5,0],
+"superbuild.html#autotoc_md23":[5,0],
 "testing__framework_8hpp.html":[9,0,0,0,4,0],
 "testing__framework_8hpp_source.html":[9,0,0,0,4,0],
 "timer_8hpp.html":[9,0,0,0,5,9],

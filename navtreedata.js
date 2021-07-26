@@ -27,43 +27,39 @@ var NAVTREE =
   [ "ZisaCore", "index.html", [
     [ "Quickstart", "index.html#autotoc_md0", null ],
     [ "Dependencies", "md_dependencies.html", [
-      [ "Automated dependencies", "md_dependencies.html#autotoc_md2", null ],
-      [ "Overview of dependencies", "md_dependencies.html#autotoc_md3", [
-        [ "System dependencies", "md_dependencies.html#autotoc_md4", null ],
-        [ "Common dependencies", "md_dependencies.html#autotoc_md5", null ],
-        [ "Internal dependencies", "md_dependencies.html#autotoc_md6", null ],
-        [ "Scientific dependencies", "md_dependencies.html#autotoc_md7", null ]
+      [ "Automated dependencies", "md_dependencies.html#automated_dependencies", null ],
+      [ "Overview of dependencies", "md_dependencies.html#autotoc_md2", [
+        [ "System dependencies", "md_dependencies.html#autotoc_md3", null ],
+        [ "Common dependencies", "md_dependencies.html#autotoc_md4", null ],
+        [ "Internal dependencies", "md_dependencies.html#autotoc_md5", null ],
+        [ "Scientific dependencies", "md_dependencies.html#autotoc_md6", null ]
       ] ]
     ] ],
     [ "Building", "md_building.html", [
-      [ "CMake Primer", "md_building.html#autotoc_md9", [
-        [ "Globbing source files", "md_building.html#autotoc_md10", null ],
-        [ "Deleting build folders", "md_building.html#autotoc_md11", null ]
-      ] ],
       [ "Project specific flags", "md_building.html#cmake_flags", null ],
-      [ "IDEs", "md_building.html#autotoc_md12", null ]
+      [ "IDEs", "md_building.html#autotoc_md8", null ]
     ] ],
     [ "Conan", "md_conan.html", [
-      [ "Quick Conan Primer", "md_conan.html#autotoc_md14", [
-        [ "Conan Profiles", "md_conan.html#autotoc_md15", null ],
-        [ "C++11 Standard Library", "md_conan.html#autotoc_md16", null ]
+      [ "Quick Conan Primer", "md_conan.html#autotoc_md10", [
+        [ "Conan Profiles", "md_conan.html#autotoc_md11", null ],
+        [ "C++11 Standard Library", "md_conan.html#autotoc_md12", null ]
       ] ],
-      [ "Combining CMake and Conan", "md_conan.html#autotoc_md17", null ]
+      [ "Combining CMake and Conan", "md_conan.html#autotoc_md13", null ]
     ] ],
-    [ "CMake", "md_cmake.html", [
-      [ "CMake Primer", "md_cmake.html#autotoc_md19", [
-        [ "Globbing source files", "md_cmake.html#autotoc_md20", null ],
-        [ "Deleting build folders", "md_cmake.html#autotoc_md21", null ],
-        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "md_cmake.html#autotoc_md22", null ],
-        [ "Installing an modern version", "md_cmake.html#autotoc_md23", null ],
-        [ "CUDA", "md_cmake.html#autotoc_md24", null ],
-        [ "Configuring a file.", "md_cmake.html#autotoc_md25", null ],
-        [ "Aliases", "md_cmake.html#autotoc_md26", null ]
+    [ "CMake Usage", "cmake_usage.html", [
+      [ "CMake Primer", "cmake_usage.html#autotoc_md14", [
+        [ "Globbing source files", "cmake_usage.html#autotoc_md15", null ],
+        [ "Deleting build folders", "cmake_usage.html#autotoc_md16", null ],
+        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "cmake_usage.html#autotoc_md17", null ],
+        [ "Installing an modern version", "cmake_usage.html#autotoc_md18", null ],
+        [ "CUDA", "cmake_usage.html#autotoc_md19", null ],
+        [ "Configuring a file.", "cmake_usage.html#autotoc_md20", null ],
+        [ "Aliases", "cmake_usage.html#autotoc_md21", null ]
       ] ],
-      [ "Packaging with CMake", "md_cmake.html#autotoc_md27", null ]
+      [ "Packaging with CMake", "cmake_usage.html#autotoc_md22", null ]
     ] ],
     [ "Superbuild", "superbuild.html", [
-      [ "Random Notes", "superbuild.html#autotoc_md28", null ]
+      [ "Random Notes", "superbuild.html#autotoc_md23", null ]
     ] ],
     [ "Contributing", "md_contributing.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -100,7 +96,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "add__const__if_8hpp.html",
-"namespacezisa.html#a0b47083507c860d566c89dffe71cbab5"
+"namespacezisa.html#a11107d6be8a0a9dad196d7e4a9b5e713"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

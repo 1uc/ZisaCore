@@ -5,7 +5,7 @@ var searchData=
   ['check_5fcuda_5ferror_24',['check_cuda_error',['../namespacezisa.html#a35c5190ba8f7512ea50f7ddf9e36e5d5',1,'zisa']]],
   ['check_5fcuda_5ferror_2ecpp_25',['check_cuda_error.cpp',['../check__cuda__error_8cpp.html',1,'']]],
   ['check_5fcuda_5ferror_2ehpp_26',['check_cuda_error.hpp',['../check__cuda__error_8hpp.html',1,'']]],
-  ['cmake_27',['CMake',['../md_cmake.html',1,'']]],
+  ['cmake_20usage_27',['CMake Usage',['../cmake_usage.html',1,'']]],
   ['cmake_2emd_28',['cmake.md',['../cmake_8md.html',1,'']]],
   ['comparison_2ehpp_29',['comparison.hpp',['../comparison_8hpp.html',1,'']]],
   ['conan_30',['Conan',['../md_conan.html',1,'']]],
