@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZisaCore: Dependencies</title>
+<title>ZisaCore: Superbuild</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('md_dependencies.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('superbuild.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,39 +83,34 @@ $(document).ready(function(){initNavTree('md_dependencies.html',''); initResizab
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Dependencies </div>  </div>
+<div class="title">Superbuild </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md2"></a>
-Automated dependencies</h1>
-<p>Naturally, while it can be useful to be able to install each of the dependencies manually, e.g., on a pesky cluster, for the most part this can be automated in a script.</p>
-<p>To install the dependencies use </p><pre class="fragment">$ bin/install_dir.sh COMPILER DIRECTORY
-</pre><p> which will install the dependencies into a subfolder of <code>DIRECTORY</code> and print part of the CMake command needed to include the dependencies. <code>COMPILER</code> must be replaced with the compiler you want to use.</p>
-<p>If this worked continue by adding <a class="el" href="md_building.html#cmake_flags">project specific flags</a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Overview of dependencies</h1>
-<p>Zisa uses modern CMake to manage any dependencies it has. We've devided them into four categories: <em>system dependencies</em> which are hard to install, low level libraries; <em>common dependencies</em> these are properly packaged libraries; <em>internal dependencies</em> meaning other parts of Zisa; and finally <em>scientific dependencies</em> these are dependencies on other scientific codes, which may not be nicely packaged and might not be open-source.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-System dependencies</h2>
-<p>We simply assume that these are present on the system. On a personal computer these are intalled using the package manager or something similar.</p>
-<p>Examples are:</p><ul>
-<li>CUDA</li>
-<li>MPI</li>
-<li>HDF5</li>
-<li>NetCDF</li>
+<div class="textblock"><p><a class="anchor" id="md_superbuild"></a>Zisa is organized in separate libraries. The code of each of these lives in a separate git repository. This is different from the organization style where the whole application is located in a single repository. In particular when it comes to code navigation, the <em>other</em> parts of Zisa are treated as external dependencies and are therefore not modifiable. This can be unwieldy. A solution to this problem is something called superbuilds.</p>
+<p>The variant we'll discuss here is intended to be used by developers, i.e. people who want to navigate and modify the combined source code of Zisa. The <code>zisa</code> repository is such a superbuild. The summary for using the Zisa superbuild is: </p><pre class="fragment">git clone --recursive git@github.com:1uc/zisa.git
+git submodule foreach "git checkout main"
+</pre><p> then continue working as if they were a single combinded code base, organized in separate independent git repositories.</p>
+<p>The steps for creating a new superbuild are:</p>
+<ul>
+<li>Create an empty repository and add all required parts of Zisa to it as Git submodules. Now since the aim is to modify the code, each submodule must be up-to-date, i.e. on the <code>main</code> branch. This can be achieved by a <div class="fragment"><div class="line">git submodule foreach &quot;git checkout main&quot;</div>
+</div><!-- fragment --></li>
+<li>A boilerplate top-level <code>CMakeLists.txt</code> must be created, which does two things:<ol type="1">
+<li>Replace <code>find_package</code> with a no-op for Zisa internal dependencies.</li>
+<li>Add all the subdirectories, which brings in the Zisa related targets.</li>
+</ol>
+</li>
+<li>Tidy things up by adding the scripts required to manage any external dependencies.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Common dependencies</h2>
-<p>Since these are nicely packaged C++ libraries, we can use Conan to install them. Conan can be installed using <code>pip</code>, e.g., </p><pre class="fragment">pip install --user conan
-</pre><p> Remember that you might need to add a folder to your <code>PATH</code>. There is a <code>conanfile.txt</code> which lists the libraries that need to be installed.</p>
-<p><b>Note:</b> If you're new to Conan and it's using the correct compiler, please read up on profiles. Which is how you can tell Conan the details required to pick an ABI compatible binary.</p>
-<p>Please refer to <a class="el" href="md_conan.html">Conan Details</a> for further details on how we use Conan.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Internal dependencies</h2>
-<p>These are distributed as source. Hence one must clone or download the repository; then compile and install using typical CMake commands. Once they're installed they are no different from common dependencies.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Scientific dependencies</h2>
-<p>These are installed using custom scripts, check <code>bin/</code> for anything with a related name. Note, that these dependencies are always optional, and not present in all parts of Zisa. </p>
+<h1><a class="anchor" id="autotoc_md28"></a>
+Random Notes</h1>
+<p>A couple of important things to refer back to:</p>
+<ul>
+<li>One can use <code>git clone --recursive URL</code> to checkout a repository with all it's submodules.</li>
+<li>When recursively cloning a repository with submodules, will be in detached HEAD mode and each submodule points to a commit with specific SHA. Detached HEAD is a bad place to start making modifications. Therefore, these developer superbuilds should work more naturally, if the submodules checkout the <code>main</code> branch.</li>
+<li>It seems that if the submodules track the <code>main</code> branch they behave much like independent Git repositories; and the normal workflow can be used in each repository, e.g., create a feature branch, commit changes, create pull request, etc.</li>
+<li>The literature mentions a "war over the SHA". That is, since in the outer repository the submodules are stored by means of just a SHA, updating this SHA is similar to updating a file which changes completely everytime. Therefore, there is a large potential for merge conflicts. Since in this variant of the superbuild the submodules checkout the branch <code>main</code> it's irrelevant which value of SHA the outer repo points to. Any reasonably current version which compiles seems like a sane value. Hence, I don't see these merge conflicts becoming a particular headache.</li>
+<li>Given how shallow the outer repository is, it's not clear it must be shared or pushed to a remote at all. A simple backup might be sufficient. Therefore, eliminating any non standard submodule related interations with other people. </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

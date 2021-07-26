@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "pv",
   6: "airt",
   7: "_alpxz",
-  8: "bcdz"
+  8: "bcdsz"
 };
 
 var indexSectionNames =
