@@ -102,7 +102,8 @@ public:
 }
 
 template <class To, class From>
-ANY_DEVICE_INLINE typename std::decay<To>::type integer_cast(From from) {
+constexpr ANY_DEVICE_INLINE typename std::decay<To>::type
+integer_cast(From from) {
   return detail::IntegerCast<typename std::decay<To>::type,
                              typename std::decay<From>::type>::cast(from);
 }
