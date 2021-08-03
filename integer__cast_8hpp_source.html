@@ -185,14 +185,15 @@ $(document).ready(function(){initNavTree('integer__cast_8hpp_source.html',''); i
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> To, <span class="keyword">class</span> From&gt;</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="namespacezisa.html#a95115294216a4763e7383c05a2083e01">  100</a></span>&#160;<a class="code" href="config_8hpp.html#a7b4dc95e52d09d48568a4e094d80d3a8">ANY_DEVICE_INLINE</a> <span class="keyword">typename</span> std::decay&lt;To&gt;::type <a class="code" href="namespacezisa.html#a95115294216a4763e7383c05a2083e01">integer_cast</a>(From from) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzisa_1_1detail_1_1IntegerCast.html">detail::IntegerCast&lt;typename std::decay&lt;To&gt;::type</a>,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                             <span class="keyword">typename</span> std::decay&lt;From&gt;::type&gt;::cast(from);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ZISA_INTEGER_CAST_HPP</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;constexpr <a class="code" href="config_8hpp.html#a7b4dc95e52d09d48568a4e094d80d3a8">ANY_DEVICE_INLINE</a> <span class="keyword">typename</span> std::decay&lt;To&gt;::type</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="namespacezisa.html#add5ef9189bc82b0555d03d42b996068e">  101</a></span>&#160;<a class="code" href="namespacezisa.html#add5ef9189bc82b0555d03d42b996068e">integer_cast</a>(From from) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classzisa_1_1detail_1_1IntegerCast.html">detail::IntegerCast&lt;typename std::decay&lt;To&gt;::type</a>,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                             <span class="keyword">typename</span> std::decay&lt;From&gt;::type&gt;::cast(from);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ZISA_INTEGER_CAST_HPP</span></div>
 <div class="ttc" id="aclasszisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4_html_a6daffa972cb7e7928e7d8862dc5b2941"><div class="ttname"><a href="classzisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4.html#a6daffa972cb7e7928e7d8862dc5b2941">zisa::detail::IntegerCast&lt; Int, Int &gt;::cast</a></div><div class="ttdeci">static constexpr ANY_DEVICE_INLINE Int cast(Int i)</div><div class="ttdef"><b>Definition:</b> integer_cast.hpp:95</div></div>
 <div class="ttc" id="aclasszisa_1_1detail_1_1IntegerCast_3_01int_00_01size__t_01_4_html_a0d351e2332c6d92488f5d461b6823280"><div class="ttname"><a href="classzisa_1_1detail_1_1IntegerCast_3_01int_00_01size__t_01_4.html#a0d351e2332c6d92488f5d461b6823280">zisa::detail::IntegerCast&lt; int, size_t &gt;::cast</a></div><div class="ttdeci">static constexpr ANY_DEVICE_INLINE int cast(size_t i)</div><div class="ttdef"><b>Definition:</b> integer_cast.hpp:23</div></div>
 <div class="ttc" id="aclasszisa_1_1detail_1_1IntegerCast_3_01long_00_01unsigned_01long_01_4_html_a871450a773f246acdb873711f8460357"><div class="ttname"><a href="classzisa_1_1detail_1_1IntegerCast_3_01long_00_01unsigned_01long_01_4.html#a871450a773f246acdb873711f8460357">zisa::detail::IntegerCast&lt; long, unsigned long &gt;::cast</a></div><div class="ttdeci">static constexpr ANY_DEVICE_INLINE long cast(unsigned long i)</div><div class="ttdef"><b>Definition:</b> integer_cast.hpp:86</div></div>
@@ -206,8 +207,8 @@ $(document).ready(function(){initNavTree('integer__cast_8hpp_source.html',''); i
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
 <div class="ttc" id="aconfig_8hpp_html_a7b4dc95e52d09d48568a4e094d80d3a8"><div class="ttname"><a href="config_8hpp.html#a7b4dc95e52d09d48568a4e094d80d3a8">ANY_DEVICE_INLINE</a></div><div class="ttdeci">#define ANY_DEVICE_INLINE</div><div class="ttdef"><b>Definition:</b> config.hpp:33</div></div>
 <div class="ttc" id="anamespacezisa_html"><div class="ttname"><a href="namespacezisa.html">zisa</a></div><div class="ttdef"><b>Definition:</b> check_cuda_error.cpp:9</div></div>
-<div class="ttc" id="anamespacezisa_html_a95115294216a4763e7383c05a2083e01"><div class="ttname"><a href="namespacezisa.html#a95115294216a4763e7383c05a2083e01">zisa::integer_cast</a></div><div class="ttdeci">ANY_DEVICE_INLINE std::decay&lt; To &gt;::type integer_cast(From from)</div><div class="ttdef"><b>Definition:</b> integer_cast.hpp:100</div></div>
 <div class="ttc" id="anamespacezisa_html_aa2d48eb37f07bf8edd61c20045550394"><div class="ttname"><a href="namespacezisa.html#aa2d48eb37f07bf8edd61c20045550394">zisa::max</a></div><div class="ttdeci">constexpr ANY_DEVICE_INLINE T max(const T &amp;x, const T &amp;y)</div><div class="ttdef"><b>Definition:</b> comparison.hpp:50</div></div>
+<div class="ttc" id="anamespacezisa_html_add5ef9189bc82b0555d03d42b996068e"><div class="ttname"><a href="namespacezisa.html#add5ef9189bc82b0555d03d42b996068e">zisa::integer_cast</a></div><div class="ttdeci">constexpr ANY_DEVICE_INLINE std::decay&lt; To &gt;::type integer_cast(From from)</div><div class="ttdef"><b>Definition:</b> integer_cast.hpp:101</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

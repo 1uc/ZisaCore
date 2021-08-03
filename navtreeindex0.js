@@ -190,7 +190,7 @@ var NAVTREEINDEX0 =
 "index.html":[],
 "index.html#autotoc_md0":[0],
 "integer__cast_8hpp.html":[9,0,0,0,5,3],
-"integer__cast_8hpp.html#a95115294216a4763e7383c05a2083e01":[9,0,0,0,5,3,10],
+"integer__cast_8hpp.html#add5ef9189bc82b0555d03d42b996068e":[9,0,0,0,5,3,10],
 "integer__cast_8hpp_source.html":[9,0,0,0,5,3],
 "isreal_8hpp.html":[9,0,0,0,2,2],
 "isreal_8hpp.html#a0bfe156a3f37329d5aa826120334d532":[9,0,0,0,2,2,4],

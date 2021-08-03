@@ -51,7 +51,7 @@ var namespacezisa =
     [ "herons_formula", "namespacezisa.html#a0b47083507c860d566c89dffe71cbab5", null ],
     [ "human_readable_size", "namespacezisa.html#aacd97ca6fe598619266b0ae1e76526ef", null ],
     [ "indent_block", "namespacezisa.html#a26f013935aaa813d37f3750f9e5ca17d", null ],
-    [ "integer_cast", "namespacezisa.html#a95115294216a4763e7383c05a2083e01", null ],
+    [ "integer_cast", "namespacezisa.html#add5ef9189bc82b0555d03d42b996068e", null ],
     [ "is_inside_interval", "namespacezisa.html#ae2e814590000fc2c4d7f48b26060f501", null ],
     [ "isinf", "namespacezisa.html#aacc69b703b9b5d1d35e1f9420b579fdd", null ],
     [ "isnan", "namespacezisa.html#a1bc283eed1bb0c615c7b50f224cf9657", null ],

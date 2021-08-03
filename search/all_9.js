@@ -9,7 +9,7 @@ var searchData=
   ['indent_5fblock_2ecpp_80',['indent_block.cpp',['../indent__block_8cpp.html',1,'']]],
   ['indent_5fblock_2ehpp_81',['indent_block.hpp',['../indent__block_8hpp.html',1,'']]],
   ['int_5ft_82',['int_t',['../namespacezisa.html#a8a970c6b85c8a719a933530431725d43',1,'zisa']]],
-  ['integer_5fcast_83',['integer_cast',['../namespacezisa.html#a95115294216a4763e7383c05a2083e01',1,'zisa']]],
+  ['integer_5fcast_83',['integer_cast',['../namespacezisa.html#add5ef9189bc82b0555d03d42b996068e',1,'zisa']]],
   ['integer_5fcast_2ehpp_84',['integer_cast.hpp',['../integer__cast_8hpp.html',1,'']]],
   ['integercast_85',['IntegerCast',['../classzisa_1_1detail_1_1IntegerCast.html',1,'zisa::detail']]],
   ['integercast_3c_20int_2c_20int_20_3e_86',['IntegerCast&lt; Int, Int &gt;',['../classzisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4.html',1,'zisa::detail']]],

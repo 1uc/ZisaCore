@@ -10,5 +10,5 @@ var integer__cast_8hpp =
     [ "IntegerCast< unsigned long, long >", "classzisa_1_1detail_1_1IntegerCast_3_01unsigned_01long_00_01long_01_4.html", null ],
     [ "IntegerCast< long, unsigned long >", "classzisa_1_1detail_1_1IntegerCast_3_01long_00_01unsigned_01long_01_4.html", null ],
     [ "IntegerCast< Int, Int >", "classzisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4.html", null ],
-    [ "integer_cast", "integer__cast_8hpp.html#a95115294216a4763e7383c05a2083e01", null ]
+    [ "integer_cast", "integer__cast_8hpp.html#add5ef9189bc82b0555d03d42b996068e", null ]
 ];
