@@ -6,8 +6,8 @@
 #include <zisa/utils/integer_cast.hpp>
 
 template <class To, class From>
-constexpr void check_integer_cast(From i) {
-  REQUIRE(zisa::integer_cast<To>(i) == To(i));
+constexpr bool check_integer_cast(From i) {
+  return zisa::integer_cast<To>(i) == To(i);
 }
 
 TEST_CASE("integer_cast; API", "[utils]") {
@@ -17,31 +17,31 @@ TEST_CASE("integer_cast; API", "[utils]") {
   std::size_t i_int_t = 32;
 
   SECTION("int -> *") {
-    check_integer_cast<int>(i_int);
-    check_integer_cast<std::size_t>(i_int);
-    check_integer_cast<zisa::int_t>(i_int);
-    check_integer_cast<unsigned long>(i_int);
+    REQUIRE(check_integer_cast<int>(i_int));
+    REQUIRE(check_integer_cast<std::size_t>(i_int));
+    REQUIRE(check_integer_cast<zisa::int_t>(i_int));
+    REQUIRE(check_integer_cast<unsigned long>(i_int));
   }
 
   SECTION("unsigned long -> *") {
-    check_integer_cast<int>(i_ul);
-    check_integer_cast<std::size_t>(i_ul);
-    check_integer_cast<zisa::int_t>(i_ul);
-    check_integer_cast<unsigned long>(i_ul);
+    REQUIRE(check_integer_cast<int>(i_ul));
+    REQUIRE(check_integer_cast<std::size_t>(i_ul));
+    REQUIRE(check_integer_cast<zisa::int_t>(i_ul));
+    REQUIRE(check_integer_cast<unsigned long>(i_ul));
   }
 
   SECTION("zisa::size_t -> *") {
-    check_integer_cast<int>(i_size_t);
-    check_integer_cast<std::size_t>(i_size_t);
-    check_integer_cast<zisa::int_t>(i_size_t);
-    check_integer_cast<unsigned long>(i_size_t);
+    REQUIRE(check_integer_cast<int>(i_size_t));
+    REQUIRE(check_integer_cast<std::size_t>(i_size_t));
+    REQUIRE(check_integer_cast<zisa::int_t>(i_size_t));
+    REQUIRE(check_integer_cast<unsigned long>(i_size_t));
   }
 
   SECTION("unsigned long -> *") {
-    check_integer_cast<int>(i_int_t);
-    check_integer_cast<std::size_t>(i_int_t);
-    check_integer_cast<zisa::int_t>(i_int_t);
-    check_integer_cast<unsigned long>(i_int_t);
+    REQUIRE(check_integer_cast<int>(i_int_t));
+    REQUIRE(check_integer_cast<std::size_t>(i_int_t));
+    REQUIRE(check_integer_cast<zisa::int_t>(i_int_t));
+    REQUIRE(check_integer_cast<unsigned long>(i_int_t));
   }
 
   SECTION("short -> *") {
