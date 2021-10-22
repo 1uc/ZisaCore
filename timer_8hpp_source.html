@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classzisa_1_1Timer.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classzisa_1_1Timer.html">Timer</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">using</span> clock = std::chrono::high_resolution_clock;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">using</span> clock = std::chrono::steady_clock;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classzisa_1_1Timer.html#a5ac75aac836d7f534bc5186512c9bba2">   21</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="classzisa_1_1Timer.html#a5ac75aac836d7f534bc5186512c9bba2">now</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> clock::now(); }</div>
