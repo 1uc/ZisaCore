@@ -15,7 +15,7 @@ namespace zisa {
 
 class Timer {
 private:
-  using clock = std::chrono::high_resolution_clock;
+  using clock = std::chrono::steady_clock;
 
 protected:
   auto now() const { return clock::now(); }
