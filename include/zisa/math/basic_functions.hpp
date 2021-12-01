@@ -181,7 +181,7 @@ __device__ __inline__ size_t next_pow2_nvcc(size_t n) {
 }
 #endif
 
-#ifdef __has_builtin
+#if defined __has_builtin
 #if __has_builtin(__builtin_clz)
 #define ZISA_HAS_BUILTIN_CLZ 1
 #endif
@@ -202,6 +202,36 @@ inline size_t next_pow2_gcc_clang(size_t n) {
   return n <= 1 ? n : ((size_t)(1)) << (64 - __builtin_clzl(n - 1));
 }
 #endif
+
+inline unsigned int next_pow2_portable(unsigned int n) {
+  if (n == 0) {
+    return n;
+  }
+
+  n = n - 1;
+  n |= n >> 1;
+  n |= n >> 2;
+  n |= n >> 4;
+  n |= n >> 8;
+  n |= n >> 16;
+  return n + 1;
+}
+
+inline size_t next_pow2_portable(size_t n) {
+  if (n == 0) {
+    return n;
+  }
+
+  n = n - 1;
+  n |= n >> 1;
+  n |= n >> 2;
+  n |= n >> 4;
+  n |= n >> 8;
+  n |= n >> 16;
+  n |= n >> 32;
+  return n + 1;
+}
+
 }
 
 ANY_DEVICE_INLINE
@@ -217,7 +247,7 @@ unsigned int next_pow2(unsigned int n) {
 #elif ZISA_HAS_BUILTIN_CLZ
   return detail::next_pow2_gcc_clang(n);
 #else
-#error "Missing portable implementation."
+  return detail::next_pow2_portable(n);
 #endif
 }
 
@@ -233,7 +263,7 @@ size_t next_pow2(size_t n) {
 #elif ZISA_HAS_BUILTIN_CLZL
   return detail::next_pow2_gcc_clang(n);
 #else
-#error "Missing portable implementation."
+  return detail::next_pow2_portable(n);
 #endif
 }
 

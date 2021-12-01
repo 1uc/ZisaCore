@@ -108,40 +108,52 @@ testcase_next_pow2_powers_of_two_plus_one(int bits) {
   return {std::move(input), std::move(output)};
 }
 
-template <class UInt>
-static void check_next_pow2(const std::vector<UInt> &input,
+template <class UInt, class NextPow2>
+static void check_next_pow2(const NextPow2 &np2,
+                            const std::vector<UInt> &input,
                             const std::vector<UInt> &exact) {
 
   for (size_t k = 0; k < input.size(); ++k) {
-    auto approx = zisa::next_pow2(input[k]);
+    auto approx = np2(input[k]);
     INFO(string_format("next_pow2(%d) = %d != %d", input[k], approx, exact[k]));
     REQUIRE(approx == exact[k]);
   }
 }
 
-template <class UInt>
-void testsuite_next_pow2(int bits) {
+template <class UInt, class NextPow2>
+void testsuite_next_pow2(const NextPow2 &np2, int bits) {
   SECTION("2**k") {
     auto [input, exact] = testcase_next_pow2_powers_of_two<UInt>(bits);
-    check_next_pow2(input, exact);
+    check_next_pow2(np2, input, exact);
   }
 
   SECTION("2**k - 1") {
     auto [input, exact]
         = testcase_next_pow2_powers_of_two_minus_one<UInt>(bits);
-    check_next_pow2(input, exact);
+    check_next_pow2(np2, input, exact);
   }
 
   SECTION("2**k + 1") {
     auto [input, exact] = testcase_next_pow2_powers_of_two_plus_one<UInt>(bits);
-    check_next_pow2(input, exact);
+    check_next_pow2(np2, input, exact);
   }
 }
 
 TEST_CASE("next_pow2(32bit)", "[runme][math]") {
-  testsuite_next_pow2<unsigned int>(32);
+  testsuite_next_pow2<unsigned int>(
+      [](unsigned int n) { return zisa::next_pow2(n); }, 32);
 }
 
 TEST_CASE("next_pow2(64bit)", "[runme][math]") {
-  testsuite_next_pow2<size_t>(64);
+  testsuite_next_pow2<size_t>([](size_t n) { return zisa::next_pow2(n); }, 64);
+}
+
+TEST_CASE("next_pow2_portable(32bit)", "[runme][math]") {
+  testsuite_next_pow2<unsigned int>(
+      [](unsigned int n) { return zisa::detail::next_pow2_portable(n); }, 32);
+}
+
+TEST_CASE("next_pow2_portable(64bit)", "[runme][math]") {
+  testsuite_next_pow2<size_t>(
+      [](size_t n) { return zisa::detail::next_pow2_portable(n); }, 64);
 }
