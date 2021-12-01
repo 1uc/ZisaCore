@@ -70,6 +70,8 @@ var namespacezisa =
     [ "min", "namespacezisa.html#afb84e7616d7331bf683e8a3978cb7598", null ],
     [ "minabs", "namespacezisa.html#ae48fc03558b2434efed9bf2b6aae09d4", null ],
     [ "minmod", "namespacezisa.html#af50eda3c8f47228d501afce124463906", null ],
+    [ "next_pow2", "namespacezisa.html#a6750a1e1d5b4d6a9dadc959d5e8eb694", null ],
+    [ "next_pow2", "namespacezisa.html#a0c11b24ab642bddb70caa9a375ac7888", null ],
     [ "notreal", "namespacezisa.html#a2137ae839094e18b3248f78215b2fb78", null ],
     [ "parse_duration_ms", "namespacezisa.html#a318139308147ab5df17a60d9c047fe49", null ],
     [ "pow", "namespacezisa.html#a5003dc717bc0d83a4b77a14d6a83d1cb", null ],

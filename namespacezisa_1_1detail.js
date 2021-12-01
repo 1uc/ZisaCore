@@ -13,5 +13,7 @@ var namespacezisa_1_1detail =
     [ "IntegerCast< unsigned long int, unsigned long long int >", "classzisa_1_1detail_1_1IntegerCast_3_01unsigned_01long_01int_00_01unsigned_01long_01long_01int_01_4.html", null ],
     [ "IntegerCast< unsigned long, long >", "classzisa_1_1detail_1_1IntegerCast_3_01unsigned_01long_00_01long_01_4.html", null ],
     [ "IntegerCast< long, unsigned long >", "classzisa_1_1detail_1_1IntegerCast_3_01long_00_01unsigned_01long_01_4.html", null ],
-    [ "IntegerCast< Int, Int >", "classzisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4.html", null ]
+    [ "IntegerCast< Int, Int >", "classzisa_1_1detail_1_1IntegerCast_3_01Int_00_01Int_01_4.html", null ],
+    [ "next_pow2_portable", "namespacezisa_1_1detail.html#ab71d1296c7dc50d41315a65564b53f2f", null ],
+    [ "next_pow2_portable", "namespacezisa_1_1detail.html#ac37d903a7b8f96e9b328afeab0654078", null ]
 ];
