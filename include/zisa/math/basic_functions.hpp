@@ -165,6 +165,68 @@ ANY_DEVICE_INLINE double floor(double x) {
 #endif
 }
 
+namespace detail {
+
+#if __CUDACC__
+__device__ __inline__ unsigned int next_pow2_nvcc(unsigned int n) {
+  static_assert(sizeof(int) == 4, "Unexpected size of `long long`.");
+  return n == 1 ? 1 : ((int)(1)) << (64 - __clzll((int)(n - 1)));
+}
+#endif
+
+#if __CUDACC__
+__device__ __inline__ size_t next_pow2_nvcc(size_t n) {
+  static_assert(sizeof(long long) == 8, "Unexpected size of `long long`.");
+  return n == 1 ? 1 : ((long long)(1)) << (64 - __clzll((long long)(n - 1)));
+}
+#endif
+
+#if defined(__has_builtin) && __has_builtin(__builtin_clz)
+inline unsigned int next_pow2_gcc_clang(unsigned int n) {
+  return n <= 1 ? n : ((unsigned int)(1)) << (32 - __builtin_clz(n - 1));
+}
+#endif
+
+#if defined(__has_builtin) && __has_builtin(__builtin_clzl)
+inline size_t next_pow2_gcc_clang(size_t n) {
+  return n <= 1 ? n : ((size_t)(1)) << (64 - __builtin_clzl(n - 1));
+}
+#endif
+}
+
+ANY_DEVICE_INLINE
+unsigned int next_pow2(unsigned int n) {
+  // See: https://jameshfisher.com/2018/03/30/round-up-power-2/
+  //      https://stackoverflow.com/a/63668217
+
+  static_assert(sizeof(unsigned int) == 4,
+                "Unexpected size of `unsigned int`.");
+
+#if defined(__CUDACC__) && defined(__CUDA_ARCH__)
+  return detail::next_pow2_nvcc(n);
+#elif defined(__has_builtin) && __has_builtin(__builtin_clz)
+  return detail::next_pow2_gcc_clang(n);
+#else
+#error "Missing portable implementation."
+#endif
+}
+
+ANY_DEVICE_INLINE
+size_t next_pow2(size_t n) {
+  // See: https://jameshfisher.com/2018/03/30/round-up-power-2/
+  //      https://stackoverflow.com/a/63668217
+
+  static_assert(sizeof(size_t) == 8, "Unexpected size of `size_t`.");
+
+#if defined(__CUDACC__) && defined(__CUDA_ARCH__)
+  return detail::next_pow2_nvcc(n);
+#elif defined(__has_builtin) && __has_builtin(__builtin_clzl)
+  return detail::next_pow2_gcc_clang(n);
+#else
+#error "Missing portable implementation."
+#endif
+}
+
 template <typename T>
 ANY_DEVICE_INLINE T sech(T a) {
   return 1 / cosh(a);
