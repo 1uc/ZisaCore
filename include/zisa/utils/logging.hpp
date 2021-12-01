@@ -74,7 +74,7 @@ void log_msg(char const *const file,
 #define LOG_DEBUG(msg)
 #endif
 
-#define XISX(X) #X << " = " << X
+#define XISX(X) #X << " = " << (X)
 #define PRINT(X) std::cout << XISX(X) << "\n"
 #define PRINT_IF(cond, x)                                                      \
   if ((cond)) {                                                                \
