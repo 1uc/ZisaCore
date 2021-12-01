@@ -181,13 +181,23 @@ __device__ __inline__ size_t next_pow2_nvcc(size_t n) {
 }
 #endif
 
-#if defined(__has_builtin) && __has_builtin(__builtin_clz)
+#ifdef __has_builtin
+#if __has_builtin(__builtin_clz)
+#define ZISA_HAS_BUILTIN_CLZ 1
+#endif
+
+#if __has_builtin(__builtin_clzl)
+#define ZISA_HAS_BUILTIN_CLZL 1
+#endif
+#endif
+
+#if ZISA_HAS_BUILTIN_CLZ
 inline unsigned int next_pow2_gcc_clang(unsigned int n) {
   return n <= 1 ? n : ((unsigned int)(1)) << (32 - __builtin_clz(n - 1));
 }
 #endif
 
-#if defined(__has_builtin) && __has_builtin(__builtin_clzl)
+#if ZISA_HAS_BUILTIN_CLZL
 inline size_t next_pow2_gcc_clang(size_t n) {
   return n <= 1 ? n : ((size_t)(1)) << (64 - __builtin_clzl(n - 1));
 }
@@ -204,7 +214,7 @@ unsigned int next_pow2(unsigned int n) {
 
 #if defined(__CUDACC__) && defined(__CUDA_ARCH__)
   return detail::next_pow2_nvcc(n);
-#elif defined(__has_builtin) && __has_builtin(__builtin_clz)
+#elif ZISA_HAS_BUILTIN_CLZ
   return detail::next_pow2_gcc_clang(n);
 #else
 #error "Missing portable implementation."
@@ -220,7 +230,7 @@ size_t next_pow2(size_t n) {
 
 #if defined(__CUDACC__) && defined(__CUDA_ARCH__)
   return detail::next_pow2_nvcc(n);
-#elif defined(__has_builtin) && __has_builtin(__builtin_clzl)
+#elif ZISA_HAS_BUILTIN_CLZL
   return detail::next_pow2_gcc_clang(n);
 #else
 #error "Missing portable implementation."
