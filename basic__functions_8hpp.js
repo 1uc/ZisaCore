@@ -19,6 +19,8 @@ var basic__functions_8hpp =
     [ "herons_formula", "basic__functions_8hpp.html#a0b47083507c860d566c89dffe71cbab5", null ],
     [ "log", "basic__functions_8hpp.html#abf805120b4adf0b9ef63430073f51eae", null ],
     [ "log10", "basic__functions_8hpp.html#a689547d369627f4d81dda36ecdab7316", null ],
+    [ "next_pow2", "basic__functions_8hpp.html#a6750a1e1d5b4d6a9dadc959d5e8eb694", null ],
+    [ "next_pow2", "basic__functions_8hpp.html#a0c11b24ab642bddb70caa9a375ac7888", null ],
     [ "pow", "basic__functions_8hpp.html#a5003dc717bc0d83a4b77a14d6a83d1cb", null ],
     [ "pow", "basic__functions_8hpp.html#a860cd7ecfd3af799a1b4ae78973e4f78", null ],
     [ "pow", "basic__functions_8hpp.html#a852da4945103579e0916f5690423dd4d", null ],
