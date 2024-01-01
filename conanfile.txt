@@ -1,6 +1,0 @@
-[generators]
-  cmake_find_package
-  cmake_paths
-
-[requires]
-  catch2/2.13.7
