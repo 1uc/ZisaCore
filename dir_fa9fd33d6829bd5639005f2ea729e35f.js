@@ -9,9 +9,7 @@ var dir_fa9fd33d6829bd5639005f2ea729e35f =
     [ "parse_duration.hpp", "parse__duration_8hpp.html", "parse__duration_8hpp" ],
     [ "replace_all.hpp", "replace__all_8hpp.html", "replace__all_8hpp" ],
     [ "string_format.hpp", "string__format_8hpp.html", "string__format_8hpp" ],
-    [ "timer.hpp", "timer_8hpp.html", [
-      [ "Timer", "classzisa_1_1Timer.html", "classzisa_1_1Timer" ]
-    ] ],
+    [ "timer.hpp", "timer_8hpp.html", "timer_8hpp" ],
     [ "to_string.hpp", "to__string_8hpp.html", "to__string_8hpp" ],
     [ "type_name.hpp", "type__name_8hpp.html", "type__name_8hpp" ]
 ];

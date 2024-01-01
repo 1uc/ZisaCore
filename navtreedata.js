@@ -39,27 +39,26 @@ var NAVTREE =
       [ "Project specific flags", "md_building.html#cmake_flags", null ],
       [ "IDEs", "md_building.html#autotoc_md8", null ]
     ] ],
-    [ "Conan", "md_conan.html", [
-      [ "Quick Conan Primer", "md_conan.html#autotoc_md10", [
-        [ "Conan Profiles", "md_conan.html#autotoc_md11", null ],
-        [ "C++11 Standard Library", "md_conan.html#autotoc_md12", null ]
-      ] ],
-      [ "Combining CMake and Conan", "md_conan.html#autotoc_md13", null ]
+    [ "Spack Quick Guide", "md_spack.html", [
+      [ "Spack Environments", "md_spack.html#autotoc_md10", [
+        [ "Known Issues", "md_spack.html#autotoc_md11", null ],
+        [ "Tricks", "md_spack.html#autotoc_md12", null ]
+      ] ]
     ] ],
     [ "CMake Usage", "cmake_usage.html", [
-      [ "CMake Primer", "cmake_usage.html#autotoc_md14", [
-        [ "Globbing source files", "cmake_usage.html#autotoc_md15", null ],
-        [ "Deleting build folders", "cmake_usage.html#autotoc_md16", null ],
-        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "cmake_usage.html#autotoc_md17", null ],
-        [ "Installing an modern version", "cmake_usage.html#autotoc_md18", null ],
-        [ "CUDA", "cmake_usage.html#autotoc_md19", null ],
-        [ "Configuring a file.", "cmake_usage.html#autotoc_md20", null ],
-        [ "Aliases", "cmake_usage.html#autotoc_md21", null ]
+      [ "CMake Primer", "cmake_usage.html#autotoc_md13", [
+        [ "Globbing source files", "cmake_usage.html#autotoc_md14", null ],
+        [ "Deleting build folders", "cmake_usage.html#autotoc_md15", null ],
+        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "cmake_usage.html#autotoc_md16", null ],
+        [ "Installing an modern version", "cmake_usage.html#autotoc_md17", null ],
+        [ "CUDA", "cmake_usage.html#autotoc_md18", null ],
+        [ "Configuring a file.", "cmake_usage.html#autotoc_md19", null ],
+        [ "Aliases", "cmake_usage.html#autotoc_md20", null ]
       ] ],
-      [ "Packaging with CMake", "cmake_usage.html#autotoc_md22", null ]
+      [ "Packaging with CMake", "cmake_usage.html#autotoc_md21", null ]
     ] ],
     [ "Superbuild", "superbuild.html", [
-      [ "Random Notes", "superbuild.html#autotoc_md23", null ]
+      [ "Random Notes", "superbuild.html#autotoc_md22", null ]
     ] ],
     [ "Contributing", "md_contributing.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -96,7 +95,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "add__const__if_8hpp.html",
-"namespacezisa.html#a0204092c0192e0a7b180ff3c1d49ec44"
+"md_dependencies.html#autotoc_md2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,9 +1,9 @@
 var basic__functions_8hpp =
 [
-    [ "StaticPowTrait", "structzisa_1_1internal_1_1StaticPowTrait.html", null ],
-    [ "StaticPowImpl", "structzisa_1_1internal_1_1StaticPowImpl.html", null ],
-    [ "StaticPowImpl< 1, T >", "structzisa_1_1internal_1_1StaticPowImpl_3_011_00_01T_01_4.html", null ],
-    [ "StaticPowImpl< 0, T >", "structzisa_1_1internal_1_1StaticPowImpl_3_010_00_01T_01_4.html", null ],
+    [ "zisa::internal::StaticPowTrait< T >", "structzisa_1_1internal_1_1StaticPowTrait.html", null ],
+    [ "zisa::internal::StaticPowImpl< n, T >", "structzisa_1_1internal_1_1StaticPowImpl.html", null ],
+    [ "zisa::internal::StaticPowImpl< 1, T >", "structzisa_1_1internal_1_1StaticPowImpl_3_011_00_01T_01_4.html", null ],
+    [ "zisa::internal::StaticPowImpl< 0, T >", "structzisa_1_1internal_1_1StaticPowImpl_3_010_00_01T_01_4.html", null ],
     [ "atan2", "basic__functions_8hpp.html#a7a4aa9c24396129270d1d5582951d606", null ],
     [ "avg", "basic__functions_8hpp.html#a625a2101e9d024b1d57439127e86f46c", null ],
     [ "ceil", "basic__functions_8hpp.html#a11107d6be8a0a9dad196d7e4a9b5e713", null ],
@@ -25,7 +25,7 @@ var basic__functions_8hpp =
     [ "next_pow2_portable", "basic__functions_8hpp.html#ac37d903a7b8f96e9b328afeab0654078", null ],
     [ "pow", "basic__functions_8hpp.html#a5003dc717bc0d83a4b77a14d6a83d1cb", null ],
     [ "pow", "basic__functions_8hpp.html#a860cd7ecfd3af799a1b4ae78973e4f78", null ],
-    [ "pow", "basic__functions_8hpp.html#a852da4945103579e0916f5690423dd4d", null ],
+    [ "pow", "basic__functions_8hpp.html#aa202d02f069313989b85ccc1b0a5097b", null ],
     [ "sech", "basic__functions_8hpp.html#a76dc55861af7a1af0030dfc0b137a89a", null ],
     [ "sin", "basic__functions_8hpp.html#aea7bd027ccc6aacd1fbccb949da1c3a4", null ],
     [ "sin2pi", "basic__functions_8hpp.html#ab06757766173437f3cae8ee75a11f935", null ],

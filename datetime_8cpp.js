@@ -1,6 +1,6 @@
 var datetime_8cpp =
 [
-    [ "DurationParser", "classzisa_1_1DurationParser.html", null ],
+    [ "zisa::DurationParser", "classzisa_1_1DurationParser.html", null ],
     [ "current_date", "datetime_8cpp.html#afdb9add9e510bf277337d35aa126c486", null ],
     [ "current_time", "datetime_8cpp.html#a93fbdca864ffcbb5948dcaa89b33402d", null ],
     [ "current_time_stamp", "datetime_8cpp.html#aad8aefe6e0056c86bc976980119410d9", null ],
