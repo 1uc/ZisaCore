@@ -138,7 +138,7 @@ install(EXPORT ZisaCoreTargets
 
 
 # -- Tests ---------------------------------------------------------------------
-find_package(Catch2 REQUIRED)
+add_subdirectory(third_party/Catch2)
 
 add_executable(core_unit_tests "")
 set_target_properties(core_unit_tests PROPERTIES OUTPUT_NAME unit_tests)
