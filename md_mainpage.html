@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZisaGeneric: /github/workspace/include/zisa/io/concatenate.hpp File Reference</title>
+<title>ZisaGeneric: ZisaGeneric</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('concatenate_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_mainpage.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -89,40 +89,25 @@ $(document).ready(function(){initNavTree('concatenate_8hpp.html',''); initResiza
 </div>
 </div>
 
-<div class="header">
-  <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">concatenate.hpp File Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">ZisaGeneric </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;iterator&gt;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-</div>
-<p><a href="concatenate_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacezisa"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacezisa.html">zisa</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a29dcac520a592549b15059c10f927406"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
-<tr class="memitem:a29dcac520a592549b15059c10f927406"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezisa.html#a29dcac520a592549b15059c10f927406">zisa::concatenate</a> (Iterator begin, const Iterator &amp;end, const std::string &amp;separator)</td></tr>
-<tr class="separator:a29dcac520a592549b15059c10f927406"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada298b2357ed727d3877b7e5cd9b3fb6"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ada298b2357ed727d3877b7e5cd9b3fb6"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacezisa.html#ada298b2357ed727d3877b7e5cd9b3fb6">zisa::concatenate</a> (const std::vector&lt; T &gt; &amp;c, const std::string &amp;separator)</td></tr>
-<tr class="separator:ada298b2357ed727d3877b7e5cd9b3fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-</div><!-- contents -->
+<div class="textblock"><p >ZisaGeneric is provides multidimensional arrays and array views. Along with the code required to write arrays to HDF5 or NetCDF files.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Quickstart</h1>
+<p >Start by cloning the repository </p><pre class="fragment">$ git clone https://github.com/1uc/ZisaGeneric.git
+</pre><p> and change into the newly created directory. Then proceed to install the dependencies: </p><pre class="fragment">$ bin/install_dir.sh COMPILER DIRECTORY       \
+                     [--zisa_has_mpi={0,1}]   \
+                     [--zisa_has_cuda={0,1}]
+</pre><p> they will be placed into a subdirectory of <code>DIRECTORY</code> and print part of the CMake command needed to include the dependencies. <code>COMPILER</code> must be replaced with the compiler you want to use.</p>
+<p >If this worked continue by adding <a class="el" href="md_building.html#cmake_flags">project specific flags</a> to the CMake command. If not it's not going to be a quick start. Please read <a class="el" href="md_dependencies.html">Dependencies</a> and then <a class="el" href="cmake_usage.html#md_cmake">Building</a>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_ecd84862e24137e5a2bca59724cc38bf.html">zisa</a></li><li class="navelem"><a class="el" href="dir_514e724b44ad34611606ac83e64ae1a9.html">io</a></li><li class="navelem"><a class="el" href="concatenate_8hpp.html">concatenate.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

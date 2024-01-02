@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZisaCore: Spack Quick Guide</title>
+<title>ZisaGeneric: Spack Quick Guide</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ZisaCore
+   <div id="projectname">ZisaGeneric
    </div>
   </td>
  </tr>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('md_spack.html',''); initResizable(); }
 <div class="textblock"><p >To install Spack you must clone the repository: </p><pre class="fragment">git clone https://github.com/spack/spack.git ${SPACK_DIR}
 </pre><p> In every shell you want to use Spack perform: </p><pre class="fragment">source ${SPACK_DIR}/share/spack/setup-env.sh
 </pre><p> which will modify environment variables such as <code>PATH</code> to include <code>spack</code>.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Spack Environments</h1>
 <p >These are much like Python virtual environments. First create a Spack environment and activate it. Then add all dependencies and install everything </p><pre class="fragment">spack env create zisa-deps
 spack env activate -p zisa-deps
@@ -105,11 +105,11 @@ spack install -j $(nproc)
 </pre><p> The required dependencies are documented in a <code>spack-env.yml</code> found in each component of Zisa.</p>
 <p >Subsequently, activate the environment as follows: </p><pre class="fragment">spack env activate -p zisa-deps
 </pre><p> This will modify environment variables to ensure the dependencies are made available. Notably, it sets <code>CMAKE_PREFIX_PATH</code> which ensures that <code>find_package</code> can find the newly installed versions of, say, <code>Catch2</code>.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Known Issues</h2>
 <p >After adding new dependencies, it's prudent to deactivate and activate the environment again, since often important environment variables aren't updated until the next <code>spack env activate</code>.</p>
 <p >Adding the same dependency twice (with minor variations) will likely cause a conflict since the same library is now listed twice, i.e. <code>spack add</code> does not overwrite or update a dependency it adds a new one.</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Tricks</h2>
 <p >Use <code>spack config edit</code> to edit the environment. </p>
 </div></div><!-- contents -->

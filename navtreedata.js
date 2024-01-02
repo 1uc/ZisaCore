@@ -24,41 +24,43 @@
 */
 var NAVTREE =
 [
-  [ "ZisaCore", "index.html", [
-    [ "Quickstart", "index.html#autotoc_md0", null ],
+  [ "ZisaGeneric", "index.html", [
+    [ "ZisaGeneric", "md_mainpage.html", [
+      [ "Quickstart", "md_mainpage.html#autotoc_md1", null ]
+    ] ],
     [ "Dependencies", "md_dependencies.html", [
       [ "Automated dependencies", "md_dependencies.html#automated_dependencies", null ],
-      [ "Overview of dependencies", "md_dependencies.html#autotoc_md2", [
-        [ "System dependencies", "md_dependencies.html#autotoc_md3", null ],
-        [ "Common dependencies", "md_dependencies.html#autotoc_md4", null ],
-        [ "Internal dependencies", "md_dependencies.html#autotoc_md5", null ],
-        [ "Scientific dependencies", "md_dependencies.html#autotoc_md6", null ]
+      [ "Overview of dependencies", "md_dependencies.html#autotoc_md3", [
+        [ "System dependencies", "md_dependencies.html#autotoc_md4", null ],
+        [ "Common dependencies", "md_dependencies.html#autotoc_md5", null ],
+        [ "Internal dependencies", "md_dependencies.html#autotoc_md6", null ],
+        [ "Scientific dependencies", "md_dependencies.html#autotoc_md7", null ]
       ] ]
     ] ],
     [ "Building", "md_building.html", [
       [ "Project specific flags", "md_building.html#cmake_flags", null ],
-      [ "IDEs", "md_building.html#autotoc_md8", null ]
+      [ "IDEs", "md_building.html#autotoc_md9", null ]
     ] ],
     [ "Spack Quick Guide", "md_spack.html", [
-      [ "Spack Environments", "md_spack.html#autotoc_md10", [
-        [ "Known Issues", "md_spack.html#autotoc_md11", null ],
-        [ "Tricks", "md_spack.html#autotoc_md12", null ]
+      [ "Spack Environments", "md_spack.html#autotoc_md11", [
+        [ "Known Issues", "md_spack.html#autotoc_md12", null ],
+        [ "Tricks", "md_spack.html#autotoc_md13", null ]
       ] ]
     ] ],
     [ "CMake Usage", "cmake_usage.html", [
-      [ "CMake Primer", "cmake_usage.html#autotoc_md13", [
-        [ "Globbing source files", "cmake_usage.html#autotoc_md14", null ],
-        [ "Deleting build folders", "cmake_usage.html#autotoc_md15", null ],
-        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "cmake_usage.html#autotoc_md16", null ],
-        [ "Installing an modern version", "cmake_usage.html#autotoc_md17", null ],
-        [ "CUDA", "cmake_usage.html#autotoc_md18", null ],
-        [ "Configuring a file.", "cmake_usage.html#autotoc_md19", null ],
-        [ "Aliases", "cmake_usage.html#autotoc_md20", null ]
+      [ "CMake Primer", "cmake_usage.html#autotoc_md14", [
+        [ "Globbing source files", "cmake_usage.html#autotoc_md15", null ],
+        [ "Deleting build folders", "cmake_usage.html#autotoc_md16", null ],
+        [ "<tt>CMAKE_MODULE_PATH</tt> and <tt>CMAKE_PREFIX_PATH</tt>", "cmake_usage.html#autotoc_md17", null ],
+        [ "Installing an modern version", "cmake_usage.html#autotoc_md18", null ],
+        [ "CUDA", "cmake_usage.html#autotoc_md19", null ],
+        [ "Configuring a file.", "cmake_usage.html#autotoc_md20", null ],
+        [ "Aliases", "cmake_usage.html#autotoc_md21", null ]
       ] ],
-      [ "Packaging with CMake", "cmake_usage.html#autotoc_md21", null ]
+      [ "Packaging with CMake", "cmake_usage.html#autotoc_md22", null ]
     ] ],
     [ "Superbuild", "superbuild.html", [
-      [ "Random Notes", "superbuild.html#autotoc_md22", null ]
+      [ "Random Notes", "superbuild.html#autotoc_md23", null ]
     ] ],
     [ "Contributing", "md_contributing.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -88,14 +90,14 @@ var NAVTREE =
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ],
-    [ "Github Page", "^https://github.com/1uc/ZisaCore", null ]
+    [ "Github Page", "^https://github.com/1uc/ZisaGeneric", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
 "add__const__if_8hpp.html",
-"md_dependencies.html#autotoc_md2"
+"md_dependencies.html#autotoc_md4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

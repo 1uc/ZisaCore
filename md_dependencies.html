@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ZisaCore: Dependencies</title>
+<title>ZisaGeneric: Dependencies</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ZisaCore
+   <div id="projectname">ZisaGeneric
    </div>
   </td>
  </tr>
@@ -96,13 +96,15 @@ $(document).ready(function(){initNavTree('md_dependencies.html',''); initResizab
 <div class="textblock"><h1><a class="anchor" id="automated_dependencies"></a>
 Automated dependencies</h1>
 <p >Naturally, while it can be useful to be able to install each of the dependencies manually, e.g., on a pesky cluster, for the most part this can be automated in a script.</p>
-<p >To install the dependencies use </p><pre class="fragment">$ bin/install_dir.sh COMPILER DIRECTORY
+<p >To install the dependencies use </p><pre class="fragment">$ bin/install_dir.sh COMPILER DIRECTORY       \
+                     [--zisa_has_mpi={0,1}]   \
+                     [--zisa_has_cuda={0,1}]
 </pre><p> which will install the dependencies into a subfolder of <code>DIRECTORY</code> and print part of the CMake command needed to include the dependencies. <code>COMPILER</code> must be replaced with the compiler you want to use.</p>
 <p >If this worked continue by adding <a class="el" href="md_building.html#cmake_flags">project specific flags</a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Overview of dependencies</h1>
 <p >Zisa uses modern CMake to manage any dependencies it has. We've devided them into four categories: <em>system dependencies</em> which are hard to install, low level libraries; <em>common dependencies</em> these are properly packaged libraries; <em>internal dependencies</em> meaning other parts of Zisa; and finally <em>scientific dependencies</em> these are dependencies on other scientific codes, which may not be nicely packaged and might not be open-source.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 System dependencies</h2>
 <p >We simply assume that these are present on the system. On a personal computer these are installed using the package manager or something similar.</p>
 <p >Examples are:</p><ul>
@@ -111,14 +113,14 @@ System dependencies</h2>
 <li>HDF5</li>
 <li>NetCDF</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Common dependencies</h2>
 <p >Since these are nicely packaged C++ libraries, we could use Spack to install them. Create a Spack environment and add the required libraries.</p>
 <p >Please refer to <a class="el" href="md_spack.html">Spack Details</a> for further details on how we use Spack.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Internal dependencies</h2>
 <p >These are distributed as source. Hence one must clone or download the repository; then compile and install using typical CMake commands. Once they're installed they are no different from common dependencies.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Scientific dependencies</h2>
 <p >These are installed using custom scripts, check <code>bin/</code> for anything with a related name. Note, that these dependencies are always optional, and not present in all parts of Zisa. </p>
 </div></div><!-- contents -->
