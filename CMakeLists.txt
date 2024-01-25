@@ -8,11 +8,16 @@ include("cmake/sanitizers.cmake")
 include("cmake/gperftools.cmake")
 include("cmake/clang_tidy.cmake")
 
+option(ZISA_NEEDS_EXPERIMENTAL_FILESYSTEM OFF "Is only the old experimental std::filesystem available?")
+
 # -- Dependencies --------------------------------------------------------------
 add_library(core_dependencies INTERFACE)
 
-# experimental/filesystem
-target_link_libraries(core_dependencies INTERFACE stdc++fs)
+if(ZISA_NEEDS_EXPERIMENTAL_FILESYSTEM)
+  # experimental/filesystem
+  target_link_libraries(core_dependencies INTERFACE stdc++fs)
+  target_compile_definitions(core_dependencies PRIVATE ZISA_NEEDS_EXPERIMENTAL_FILESYSTEM=1)
+endif()
 
 # Logging
 if(ZISA_LOG_LEVEL)
