@@ -1,13 +1,18 @@
 // SPDX-License-Identifier: MIT
 // Copyright (c) 2021 ETH Zurich, Luc Grosheintz-Laval
 
+#if ZISA_NEEDS_EXPERIMENTAL_FILESYSTEM
 #include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#else
+#include <filesystem>
+namespace fs = std::filesystem;
+#endif
 
 #include <zisa/io/file_manipulation.hpp>
 #include <zisa/utils/logging.hpp>
 #include <zisa/utils/string_format.hpp>
 
-namespace fs = std::experimental::filesystem;
 
 namespace zisa {
 void write_string_to_file(const std::string &message,
